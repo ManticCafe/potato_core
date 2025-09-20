@@ -1,0 +1,21 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        maven {
+            name = 'MinecraftForge'
+            url = 'https://maven.minecraftforge.net/'
+//            name = 'MinecraftForge'
+//            url = 'https://maven.minecraftforge.net/'
+//            name = "forgeMavenReleases"
+//            url = "https://maven.minecraftforge.net/releases"
+        }
+        maven{ url= 'https://maven.aliyun.com/repository/public/'}
+        maven{ url= 'https://maven.aliyun.com/repository/qradle-plugin/'}
+        maven{ url= 'https://maven.aliyun.com/repository/forqe/'}
+        maven{ url= 'https://maven.aliyun.com/repository/central/'}
+    }
+}
+
+plugins {
+    id 'org.gradle.toolchains.foojay-resolver-convention' version '0.7.0'
+}
