@@ -13,12 +13,12 @@ import com.ManticCafe.potato_core.common.entity.entities.DiamondProjectileEntity
 import com.ManticCafe.potato_core.common.entity.entityhandler;
 import net.minecraft.world.phys.Vec3;
 
-public class the_last_sword extends SwordItem {
+public class the_last_sword_level8 extends SwordItem {
 
-    private static final float PROJECTILE_DAMAGE = 12.0F;
+    private static final float PROJECTILE_DAMAGE = 64.0F;
 
-    public the_last_sword() {
-        super(infinite_tier.INFINITE_TIER,0,0,new Item.Properties().durability(-1));
+    public the_last_sword_level8() {
+        super(infinite_tier.INFINITE_TIER,104,4.5F,new Item.Properties().durability(-1));
     }
 
     @Override
@@ -30,7 +30,7 @@ public class the_last_sword extends SwordItem {
                     entityhandler.DIAMOND_PROJECTILE.get(),
                     player,
                     level,
-                    PROJECTILE_DAMAGE
+                    PROJECTILE_DAMAGE // 传递伤害值
             );
 
             Vec3 eyePosition = player.getEyePosition();
@@ -48,7 +48,7 @@ public class the_last_sword extends SwordItem {
             level.addFreshEntity(diamondProjectile);
 
             //技能CD
-            player.getCooldowns().addCooldown(this, 80);
+            player.getCooldowns().addCooldown(this, 20);
         }
 
         return InteractionResultHolder.sidedSuccess(itemstack, level.isClientSide());

@@ -10,17 +10,18 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.AABB;
 
-public class DiamondProjectileEntity extends ThrowableItemProjectile {
+public class PotatoProjectileEntity extends ThrowableItemProjectile {
     private float damage;
 
-    public DiamondProjectileEntity(EntityType<? extends ThrowableItemProjectile> type, Level level) {
+    public PotatoProjectileEntity(EntityType<? extends ThrowableItemProjectile> type, Level level) {
         super(type, level);
         this.setNoGravity(true);
         this.damage = 0.0F; // 默认伤害值
     }
 
-    public DiamondProjectileEntity(EntityType<? extends ThrowableItemProjectile> type, LivingEntity shooter, Level level, float damage) {
+    public PotatoProjectileEntity(EntityType<? extends ThrowableItemProjectile> type, LivingEntity shooter, Level level, float damage) {
         super(type, shooter, level);
         this.setNoGravity(true);
         this.damage = damage;
@@ -36,7 +37,7 @@ public class DiamondProjectileEntity extends ThrowableItemProjectile {
 
     @Override
     protected Item getDefaultItem() {
-        return Items.DIAMOND;
+        return Items.POTATO;
     }
 
     @Override

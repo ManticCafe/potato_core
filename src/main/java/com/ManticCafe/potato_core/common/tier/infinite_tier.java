@@ -27,7 +27,7 @@ public class infinite_tier implements Tier{
 
         @Override
         public float getAttackDamageBonus () {
-            return 47.0F;
+            return 23.0F;
         }
 
         @Override
