@@ -1,5 +1,6 @@
 package com.ManticCafe.potato_core;
 
+import com.ManticCafe.potato_core.common.config.configManager;
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -19,11 +20,15 @@ public class main {
 
     // 主函数
     public main(FMLJavaModLoadingContext context) {
+
+        configManager.register();
+
         IEventBus modEventBus = context.getModEventBus();
 
         System.out.println("Starting mod initialization...");
 
         modEventBus.addListener(this::onCommonSetup);
+
 
         entityhandler.register(modEventBus);
         itemhandler.register(modEventBus);

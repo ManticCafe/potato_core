@@ -15,7 +15,7 @@ import net.minecraft.world.phys.Vec3;
 
 public class the_last_sword_level3 extends SwordItem {
 
-    private static final float PROJECTILE_DAMAGE = 36.0F;
+    private static final int PROJECTILE_DAMAGE = 36;
 
     public the_last_sword_level3() {
         super(infinite_tier.INFINITE_TIER,48,2,new Item.Properties().durability(-1));

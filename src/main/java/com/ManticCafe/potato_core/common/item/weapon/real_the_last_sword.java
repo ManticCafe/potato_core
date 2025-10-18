@@ -16,7 +16,7 @@ import com.ManticCafe.potato_core.common.entity.entities.PotatoProjectileEntity;
 
 public class real_the_last_sword extends SwordItem {
 
-    private static final float PROJECTILE_DAMAGE = 1024.0F; // 自定义伤害值
+    private static final int PROJECTILE_DAMAGE = 1024;
 
     public real_the_last_sword() {
         super(infinite_tier.INFINITE_TIER, 2024, 12, new Item.Properties().durability(-1));
@@ -31,7 +31,7 @@ public class real_the_last_sword extends SwordItem {
                     entityhandler.POTATO_PROJECTILE.get(),
                     player,
                     level,
-                    PROJECTILE_DAMAGE // 传递伤害值
+                    PROJECTILE_DAMAGE
             );
 
             Vec3 eyePosition = player.getEyePosition();

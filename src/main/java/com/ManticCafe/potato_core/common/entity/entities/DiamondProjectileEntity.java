@@ -12,15 +12,15 @@ import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.Vec3;
 
 public class DiamondProjectileEntity extends ThrowableItemProjectile {
-    private float damage;
+    private int damage;
 
     public DiamondProjectileEntity(EntityType<? extends ThrowableItemProjectile> type, Level level) {
         super(type, level);
         this.setNoGravity(true);
-        this.damage = 0.0F; // 默认伤害值
+        this.damage = 0; // 默认伤害值
     }
 
-    public DiamondProjectileEntity(EntityType<? extends ThrowableItemProjectile> type, LivingEntity shooter, Level level, float damage) {
+    public DiamondProjectileEntity(EntityType<? extends ThrowableItemProjectile> type, LivingEntity shooter, Level level, int damage) {
         super(type, shooter, level);
         this.setNoGravity(true);
         this.damage = damage;
@@ -30,7 +30,7 @@ public class DiamondProjectileEntity extends ThrowableItemProjectile {
         return damage;
     }
 
-    public void setDamage(float damage) {
+    public void setDamage(int damage) {
         this.damage = damage;
     }
 
