@@ -5,6 +5,7 @@ import com.ManticCafe.potato_core.common.entity.renderer.PotatoProjectileRendere
 import com.ManticCafe.potato_core.main;
 import com.ManticCafe.potato_core.common.entity.entityhandler;
 import com.ManticCafe.potato_core.common.entity.renderer.DiamondProjectileRenderer;
+import com.ManticCafe.potato_core.common.entity.renderer.itemBaseBlockEntityRenderer;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -18,5 +19,7 @@ public class ClientModEvents {
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(entityhandler.DIAMOND_PROJECTILE.get(), DiamondProjectileRenderer::new);
         event.registerEntityRenderer(entityhandler.POTATO_PROJECTILE.get(), PotatoProjectileRenderer::new);
+
+        event.registerBlockEntityRenderer(entityhandler.ITEM_BASE_BLOCK_ENTITY.get(), itemBaseBlockEntityRenderer::new);
     }
 }

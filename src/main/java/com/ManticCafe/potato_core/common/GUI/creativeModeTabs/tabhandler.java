@@ -34,6 +34,7 @@ public class tabhandler {
                         pOutput.accept(itemhandler.the_last_ingot.get());
                         pOutput.accept(itemhandler.potato_star.get());
                         pOutput.accept(itemhandler.potato_crystal.get());
+                        pOutput.accept(itemhandler.ITEM_BASE_BLOCK_ITEM.get());
                     }).build());
 
     //注册事件

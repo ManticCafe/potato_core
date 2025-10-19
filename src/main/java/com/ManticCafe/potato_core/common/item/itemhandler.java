@@ -1,10 +1,12 @@
 package com.ManticCafe.potato_core.common.item;
 
+import com.ManticCafe.potato_core.common.block.blockhandler;
 import com.ManticCafe.potato_core.common.item.item.mysterious_potato;
 import com.ManticCafe.potato_core.common.item.tool.the_last_axe;
 import com.ManticCafe.potato_core.common.item.tool.the_last_pickaxe;
 import com.ManticCafe.potato_core.common.item.weapon.the_last_sword;
 import com.ManticCafe.potato_core.main;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -14,6 +16,8 @@ import com.ManticCafe.potato_core.common.item.weapon.*;
 
 public class itemhandler {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, main.MODID);
+
+    public static final DeferredRegister<Item> BLOCKITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, main.MODID);
 
     //register
     public static final RegistryObject<Item> the_last_sword = ITEMS.register("the_last_sword", () -> new the_last_sword());
@@ -33,7 +37,10 @@ public class itemhandler {
     public static final RegistryObject<Item> potato_crystal = ITEMS.register("potato_crystal", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> potato_star = ITEMS.register("potato_star", () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> ITEM_BASE_BLOCK_ITEM = ITEMS.register("item_base_block", () -> new BlockItem(blockhandler.ITEM_BASE_BLOCK.get(), new Item.Properties()));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
+        BLOCKITEMS.register(eventBus);
     }
 }

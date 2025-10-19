@@ -1,6 +1,8 @@
 {
     "//方块本地化：":" ",
-    "block.potato_core.    ": "",
+    "block.potato_core.item_base_block": "物品基座",
+
+
     "//物品本地化：":" ",
     "item.potato_core.the_last_sword": "最终之剑",
     "item.potato_core.the_last_sword_level2": "最终之剑(二级)",
@@ -19,8 +21,13 @@
     "item.potato_core.the_last_pickaxe": "最终之镐",
     "item.potato_core.potato_star": "土豆之星",
     "item.potato_core.potato_crystal": "土豆结晶",
+    "item.potato_core.item_base_block": "物品基座",
+
+
     "//物品栏本地化：":" ",
     "itemGroup.potato_core": "土豆核心",
+
+    
     "//tooltip本地化":"   ",
     "tooltip.potato_core.mysterious_potato": "一颗来自另一个次元的土豆"
 }

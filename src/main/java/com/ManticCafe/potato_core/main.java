@@ -1,5 +1,6 @@
 package com.ManticCafe.potato_core;
 
+import com.ManticCafe.potato_core.common.block.blockhandler;
 import com.ManticCafe.potato_core.common.config.configManager;
 import com.ManticCafe.potato_core.common.config.ConfigCache;
 import com.mojang.logging.LogUtils;
@@ -33,6 +34,7 @@ public class main {
         entityhandler.register(modEventBus);
         itemhandler.register(modEventBus);
         tabhandler.register(modEventBus);
+        blockhandler.register(modEventBus);
 
         LOGGER.info("Mod initialization phase 1 complete");
     }
