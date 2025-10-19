@@ -1,6 +1,7 @@
 package com.ManticCafe.potato_core;
 
 import com.ManticCafe.potato_core.common.config.configManager;
+import com.ManticCafe.potato_core.common.config.ConfigCache;
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -13,31 +14,44 @@ import com.ManticCafe.potato_core.common.GUI.creativeModeTabs.tabhandler;
 
 @Mod(main.MODID)
 public class main {
-    // Define mod id in a common place for everything to reference
     public static final String MODID = "potato_core";
-    // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
 
-    // 主函数
     public main(FMLJavaModLoadingContext context) {
+        LOGGER.info("Starting mod initialization...");
 
+        LOGGER.info("Registering configuration manager...");
         configManager.register();
 
+        LOGGER.info("Pre-initializing config cache...");
+        ConfigCache.initialize();
+
         IEventBus modEventBus = context.getModEventBus();
-
-        System.out.println("Starting mod initialization...");
-
         modEventBus.addListener(this::onCommonSetup);
 
-
+        LOGGER.info("Registering entities, items, and tabs...");
         entityhandler.register(modEventBus);
         itemhandler.register(modEventBus);
         tabhandler.register(modEventBus);
+
+        LOGGER.info("Mod initialization phase 1 complete");
     }
 
-
     private void onCommonSetup(final FMLCommonSetupEvent event) {
-        // 这里可以放置需要在模组初始化时执行的代码
-        LOGGER.info("Territory Cabinet mod common setup complete");
+        LOGGER.info("Common setup - verifying configuration cache...");
+
+        if (ConfigCache.isInitialized()) {
+            LOGGER.info("Configuration cache verified - ready to use");
+        } else {
+            LOGGER.warn("Configuration cache not initialized, attempting to initialize again...");
+            ConfigCache.initialize();
+            if (ConfigCache.isInitialized()) {
+                LOGGER.info("Configuration cache initialized successfully in common setup");
+            } else {
+                LOGGER.error("Configuration cache failed to initialize in common setup");
+            }
+        }
+
+        LOGGER.info("Potato Core mod common setup complete");
     }
 }

@@ -16,7 +16,7 @@ import com.ManticCafe.potato_core.common.config.configReader;
 
 public class the_last_sword extends SwordItem {
 
-    private static final int PROJECTILE_DAMAGE = 12;
+    private static final int PROJECTILE_DAMAGE = configReader.getr_projectile_damage();
 
     public the_last_sword() {
         super(infinite_tier.INFINITE_TIER,0,0,new Item.Properties().durability(-1));
@@ -49,7 +49,7 @@ public class the_last_sword extends SwordItem {
             level.addFreshEntity(diamondProjectile);
 
             //技能CD
-            player.getCooldowns().addCooldown(this,80);
+            player.getCooldowns().addCooldown(this,configReader.getl1_cd());
         }
 
         return InteractionResultHolder.sidedSuccess(itemstack, level.isClientSide());
