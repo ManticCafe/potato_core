@@ -12,10 +12,11 @@ import net.minecraft.world.level.Level;
 import com.ManticCafe.potato_core.common.entity.entities.DiamondProjectileEntity;
 import com.ManticCafe.potato_core.common.entity.entityhandler;
 import net.minecraft.world.phys.Vec3;
+import com.ManticCafe.potato_core.common.config.configReader;
 
 public class the_last_sword_level3 extends SwordItem {
 
-    private static final int PROJECTILE_DAMAGE = 36;
+    private static final int PROJECTILE_DAMAGE = configReader.getl3_projectile_damage();
 
     public the_last_sword_level3() {
         super(infinite_tier.INFINITE_TIER,48,2,new Item.Properties().durability(-1));
@@ -48,7 +49,7 @@ public class the_last_sword_level3 extends SwordItem {
             level.addFreshEntity(diamondProjectile);
 
             //技能CD
-            player.getCooldowns().addCooldown(this, 60);
+            player.getCooldowns().addCooldown(this, configReader.getl3_cd());
         }
 
         return InteractionResultHolder.sidedSuccess(itemstack, level.isClientSide());

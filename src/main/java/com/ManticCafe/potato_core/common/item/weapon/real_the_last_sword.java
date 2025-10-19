@@ -13,10 +13,11 @@ import com.ManticCafe.potato_core.common.entity.entities.PotatoProjectileEntity;
 import com.ManticCafe.potato_core.common.entity.entityhandler;
 import net.minecraft.world.phys.Vec3;
 import com.ManticCafe.potato_core.common.entity.entities.PotatoProjectileEntity;
+import com.ManticCafe.potato_core.common.config.configReader;
 
 public class real_the_last_sword extends SwordItem {
 
-    private static final int PROJECTILE_DAMAGE = 1024;
+    private static final int PROJECTILE_DAMAGE = configReader.getr_projectile_damage();
 
     public real_the_last_sword() {
         super(infinite_tier.INFINITE_TIER, 2024, 12, new Item.Properties().durability(-1));
@@ -49,7 +50,7 @@ public class real_the_last_sword extends SwordItem {
             level.addFreshEntity(potatoProjectile);
 
             // 技能CD
-            player.getCooldowns().addCooldown(this, 1);
+            player.getCooldowns().addCooldown(this, configReader.getr_cd());
         }
 
         return InteractionResultHolder.sidedSuccess(itemstack, level.isClientSide());

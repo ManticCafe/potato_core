@@ -54,43 +54,33 @@ public class ConfigCache {
         }
 
         try {
-            L1_DAMAGE = configManager.COMMON.l1_damage.get();
             L1_PROJECTILE_DAMAGE = configManager.COMMON.l1_projectile_damage.get();
             L1_CD = configManager.COMMON.l1_cd.get();
 
-            L2_DAMAGE = configManager.COMMON.l2_damage.get();
             L2_PROJECTILE_DAMAGE = configManager.COMMON.l2_projectile_damage.get();
             L2_CD = configManager.COMMON.l2_cd.get();
 
-            L3_DAMAGE = configManager.COMMON.l3_damage.get();
             L3_PROJECTILE_DAMAGE = configManager.COMMON.l3_projectile_damage.get();
             L3_CD = configManager.COMMON.l3_cd.get();
 
-            L4_DAMAGE = configManager.COMMON.l4_damage.get();
             L4_PROJECTILE_DAMAGE = configManager.COMMON.l4_projectile_damage.get();
             L4_CD = configManager.COMMON.l4_cd.get();
 
-            L5_DAMAGE = configManager.COMMON.l5_damage.get();
             L5_PROJECTILE_DAMAGE = configManager.COMMON.l5_projectile_damage.get();
             L5_CD = configManager.COMMON.l5_cd.get();
 
-            L6_DAMAGE = configManager.COMMON.l6_damage.get();
             L6_PROJECTILE_DAMAGE = configManager.COMMON.l6_projectile_damage.get();
             L6_CD = configManager.COMMON.l6_cd.get();
 
-            L7_DAMAGE = configManager.COMMON.l7_damage.get();
             L7_PROJECTILE_DAMAGE = configManager.COMMON.l7_projectile_damage.get();
             L7_CD = configManager.COMMON.l7_cd.get();
 
-            L8_DAMAGE = configManager.COMMON.l8_damage.get();
             L8_PROJECTILE_DAMAGE = configManager.COMMON.l8_projectile_damage.get();
             L8_CD = configManager.COMMON.l8_cd.get();
 
-            L9_DAMAGE = configManager.COMMON.l9_damage.get();
             L9_PROJECTILE_DAMAGE = configManager.COMMON.l9_projectile_damage.get();
             L9_CD = configManager.COMMON.l9_cd.get();
 
-            R_DAMAGE = configManager.COMMON.r_damage.get();
             R_PROJECTILE_DAMAGE = configManager.COMMON.r_projectile_damage.get();
             R_CD = configManager.COMMON.r_cd.get();
 
