@@ -26,8 +26,8 @@ public class itemBaseBlockEntityRenderer implements BlockEntityRenderer<itemBase
         ItemRenderer itemRenderer = Minecraft.getInstance().getItemRenderer();
 
         poseStack.pushPose();
-                                                                                                //0.05为物品浮动幅度 0.15为物品悬浮高度
-        double offsetY = Math.sin((blockEntity.getLevel().getGameTime() + partialTick) * 0.1) * 0.05 + 0.15;
+                                                                                                //0为物品浮动幅度 0.05为物品悬浮高度
+        double offsetY = Math.sin((blockEntity.getLevel().getGameTime() + partialTick) * 0.1) * 0 + 0.05;
         poseStack.translate(0.5, 1.2 + offsetY, 0.5);
 
         float rotation = (blockEntity.getLevel().getGameTime() + partialTick) * 2;

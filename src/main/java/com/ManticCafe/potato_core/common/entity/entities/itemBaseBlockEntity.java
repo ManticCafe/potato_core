@@ -106,6 +106,7 @@ public class itemBaseBlockEntity extends BlockEntity {
         return InteractionResult.sidedSuccess(level.isClientSide);
     }
 
+    //获取当前存储的物品
     public ItemStack getDisplayedItem() {
         return itemHandler.getStackInSlot(0);
     }
