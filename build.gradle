@@ -145,9 +145,9 @@ dependencies {
     // compileOnly fg.deobf("mezz.jei:jei-${mc_version}-forge-api:${jei_version}")
     // runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}-forge:${jei_version}")
 
-    compileOnly fg.deobf("mezz.jei:jei-1.20.1-common-api:15.2.0.27")
-    compileOnly fg.deobf("mezz.jei:jei-1.20.1-forge-api:15.2.0.27")
-    runtimeOnly fg.deobf("mezz.jei:jei-1.20.1-forge:15.2.0.27")
+//    compileOnly fg.deobf("mezz.jei:jei-1.20.1-common-api:15.2.0.27")
+//    compileOnly fg.deobf("mezz.jei:jei-1.20.1-forge-api:15.2.0.27")
+//    runtimeOnly fg.deobf("mezz.jei:jei-1.20.1-forge:15.2.0.27")
 
     // Example mod dependency using a mod jar from ./libs with a flat dir repository
     // This maps to ./libs/coolmod-${mc_version}-${coolmod_version}.jar
