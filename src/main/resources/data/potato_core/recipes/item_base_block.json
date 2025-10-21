@@ -1,0 +1,29 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "SBS",
+      "LSL",
+      "ITI"
+    ],
+    "key": {
+      "S": {
+        "item": "minecraft:cobblestone"
+      },
+      "B": {
+        "item": "minecraft:iron_block"
+      },
+      "L": {
+        "tag": "minecraft:wooden_fences"
+      },
+      "I": {
+        "item": "minecraft:iron_ingot"
+      },
+      "T": {
+        "item": "minecraft:cobblestone_slab"
+      }
+    },
+    "result": {
+      "item": "potato_core:item_base_block",
+      "count": 1
+    }
+  }
