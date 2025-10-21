@@ -46,7 +46,6 @@ public class real_the_last_sword extends SwordItem {
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
         super.appendHoverText(stack, level, tooltip, flag);
 
-        // 显示挖掘功能状态
         if (configReader.getr_c()) {
             int miningLevel = getMiningSpeedLevel(stack);
             String miningName = LEVEL_NAMES[miningLevel];
@@ -57,10 +56,9 @@ public class real_the_last_sword extends SwordItem {
                 tooltip.add(Component.literal("§7挖掘速度: §a" + miningSpeed));
             }
 
-            // 显示操作提示
-            tooltip.add(Component.literal("§8潜行右键切换挖掘档位"));
+            tooltip.add(Component.literal("§8潜行右键切换挖掘模式"));
         } else {
-            tooltip.add(Component.literal("§6挖掘模式: §c未启用"));
+            tooltip.add(Component.literal("§6挖掘模式: §c未启用,请更改配置文件以开启"));
         }
     }
 
