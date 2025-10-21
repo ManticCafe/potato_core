@@ -33,6 +33,7 @@ public class weaponsConfigs {
 
     public final ForgeConfigSpec.IntValue r_projectile_damage;
     public final ForgeConfigSpec.IntValue r_cd;
+    public final ForgeConfigSpec.BooleanValue r_c;
 
 
     public weaponsConfigs(ForgeConfigSpec.Builder builder) {
@@ -128,6 +129,9 @@ public class weaponsConfigs {
         r_cd = builder
                 .comment("土豆之剑投掷物冷却:（0 ~ 2147483647,默认：1）")
                 .defineInRange("cd",1,0,2147483647);
+        r_c = builder
+                .comment("是否启用挖掘功能：(Boolean,默认true)")
+                        .define("Destruction_function",true);
         builder.pop();
     }
 

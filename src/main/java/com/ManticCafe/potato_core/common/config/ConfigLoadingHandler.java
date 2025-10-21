@@ -24,7 +24,7 @@ public class ConfigLoadingHandler {
     public static void onConfigLoaded(final ModConfigEvent.Loading event) {
         if (event.getConfig().getSpec() == configManager.COMMON_SPEC) {
             configLoaded = true;
-            ConfigCache.initialize(); // 初始化缓存
+            ConfigCache.initialize();
             LOGGER.info("Configuration loaded and cached successfully!");
         }
     }

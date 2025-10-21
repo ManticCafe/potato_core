@@ -111,6 +111,11 @@ public class configReader {
         return ConfigCache.R_CD;
     }
 
+    public static boolean getr_c() {
+        ensureCacheInitialized();
+        return ConfigCache.R_C;
+    }
+
     private static void ensureCacheInitialized() {
         if (!ConfigCache.isInitialized()) {
             ConfigCache.initialize();

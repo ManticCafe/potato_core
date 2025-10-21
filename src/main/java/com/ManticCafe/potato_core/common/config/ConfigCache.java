@@ -47,6 +47,7 @@ public class ConfigCache {
     public static int R_DAMAGE = 2048;
     public static int R_PROJECTILE_DAMAGE = 1024;
     public static int R_CD = 1;
+    public static boolean R_C = true;
 
     public static void initialize() {
         if (initialized.get()) {
@@ -83,6 +84,7 @@ public class ConfigCache {
 
             R_PROJECTILE_DAMAGE = configManager.COMMON.r_projectile_damage.get();
             R_CD = configManager.COMMON.r_cd.get();
+            R_C = configManager.COMMON.r_c.get();
 
             initialized.set(true);
             LOGGER.info("Config cache initialized successfully with all values");

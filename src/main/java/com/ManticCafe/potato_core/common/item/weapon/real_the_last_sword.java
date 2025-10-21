@@ -1,18 +1,25 @@
 package com.ManticCafe.potato_core.common.item.weapon;
 
+import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
-import net.minecraft.world.item.Tier;
 import com.ManticCafe.potato_core.common.tier.infinite_tier;
 import net.minecraft.world.level.Level;
 import com.ManticCafe.potato_core.common.entity.entities.PotatoProjectileEntity;
 import com.ManticCafe.potato_core.common.entity.entityhandler;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.level.storage.loot.LootParams;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.phys.Vec3;
-import com.ManticCafe.potato_core.common.entity.entities.PotatoProjectileEntity;
 import com.ManticCafe.potato_core.common.config.configReader;
 
 public class real_the_last_sword extends SwordItem {
@@ -54,5 +61,156 @@ public class real_the_last_sword extends SwordItem {
         }
 
         return InteractionResultHolder.sidedSuccess(itemstack, level.isClientSide());
+    }
+
+    @Override
+    public boolean onBlockStartBreak(ItemStack itemstack, BlockPos pos, Player player) {
+
+        Level level = player.level();
+        if (player.isCreative()) {
+            return false;
+        }
+
+        if (configReader.getr_c() && !level.isClientSide) {
+
+            BlockState blockState = level.getBlockState(pos);
+            if (shouldInstantMine(blockState, level, pos)) {
+
+                if (player.hasCorrectToolForDrops(blockState)) {
+
+                    if (level instanceof ServerLevel) {
+
+                        ServerLevel serverLevel = (ServerLevel) level;
+                        BlockEntity blockEntity = level.getBlockEntity(pos);
+                        LootParams.Builder lootParamsBuilder = new LootParams.Builder(serverLevel)
+                                .withParameter(LootContextParams.ORIGIN, Vec3.atCenterOf(pos))
+                                .withParameter(LootContextParams.TOOL, itemstack)
+                                .withOptionalParameter(LootContextParams.BLOCK_ENTITY, blockEntity)
+                                .withOptionalParameter(LootContextParams.THIS_ENTITY, player);
+                        java.util.List<ItemStack> drops = blockState.getDrops(lootParamsBuilder);
+                        for (ItemStack drop : drops) {
+
+                            if (!drop.isEmpty()) {
+
+                                net.minecraft.world.entity.item.ItemEntity itemEntity =
+                                        new net.minecraft.world.entity.item.ItemEntity(
+                                                level,
+                                                pos.getX() + 0.5,
+                                                pos.getY() + 0.5,
+                                                pos.getZ() + 0.5,
+                                                drop
+                                        );
+                                level.addFreshEntity(itemEntity);
+                            }
+                        }
+                        level.levelEvent(2001, pos, net.minecraft.world.level.block.Block.getId(blockState));
+                        level.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
+                    }
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    private boolean shouldInstantMine(BlockState blockState, Level level, BlockPos pos) {
+
+        if (blockState.getDestroySpeed(level, pos) < 0) {
+            return false;
+        }
+
+        FluidState fluidState = blockState.getFluidState();
+        if (!fluidState.isEmpty()) {
+            return false;
+        }
+
+        if (blockState.is(Blocks.FIRE) || blockState.is(Blocks.SOUL_FIRE)) {
+            return false;
+        }
+
+        if (blockState.isAir()) {
+            return false;
+        }
+
+        return true;
+    }
+
+    private boolean isFireBlock(BlockState blockState) {
+        return blockState.is(Blocks.FIRE) || blockState.is(Blocks.SOUL_FIRE);
+    }
+
+    @Override
+    public InteractionResult useOn(net.minecraft.world.item.context.UseOnContext context) {
+
+        Level level = context.getLevel();
+        BlockPos pos = context.getClickedPos();
+        Player player = context.getPlayer();
+        BlockState blockState = level.getBlockState(pos);
+        if (isFireBlock(blockState)) {
+
+            if (!level.isClientSide) {
+
+                level.levelEvent(null, 1009, pos, 0);
+                level.removeBlock(pos, false);
+            }
+            return InteractionResult.sidedSuccess(level.isClientSide);
+        }
+        return super.useOn(context);
+    }
+
+    @Override
+    public float getDestroySpeed(ItemStack stack, BlockState state) {
+
+        if (stack.getTag() != null && stack.getTag().contains("CreativePlayer")) {
+            return super.getDestroySpeed(stack, state);
+        }
+
+        if (configReader.getr_c()) {
+            return 10000.0F;
+        }
+
+        return super.getDestroySpeed(stack, state);
+    }
+
+    @Override
+    public boolean isCorrectToolForDrops(ItemStack stack, BlockState state) {
+
+        if (stack.getTag() != null && stack.getTag().contains("CreativePlayer")) {
+            return super.isCorrectToolForDrops(stack, state);
+        }
+
+        if (configReader.getr_c()) {
+            return true;
+        }
+
+        return super.isCorrectToolForDrops(stack, state);
+    }
+
+    @Override
+    public boolean canAttackBlock(BlockState state, Level level, BlockPos pos, Player player) {
+
+        if (player.isCreative()) {
+            return super.canAttackBlock(state, level, pos, player);
+        }
+
+        if (configReader.getr_c()) {
+            return true;
+        }
+
+        return super.canAttackBlock(state, level, pos, player);
+    }
+
+    @Override
+    public boolean mineBlock(ItemStack stack, Level level, BlockState state, BlockPos pos, net.minecraft.world.entity.LivingEntity entity) {
+
+        if (entity instanceof Player && ((Player)entity).isCreative()) {
+            return super.mineBlock(stack, level, state, pos, entity);
+        }
+
+        if (configReader.getr_c()) {
+            return true;
+        }
+
+        return super.mineBlock(stack, level, state, pos, entity);
     }
 }
