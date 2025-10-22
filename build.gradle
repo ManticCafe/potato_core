@@ -128,6 +128,23 @@ repositories {
     maven {url = "https://maven.blamejared.com/"}
     maven {url = "https://api.modrinth.com/maven" }
 
+    maven {
+        url "https://maven.latvian.dev/releases"
+        content {
+            includeGroup "dev.latvian.mods"
+            includeGroup "dev.latvian.apps"
+        }
+    }
+
+    maven {
+        url 'https://jitpack.io'
+        content {
+            includeGroup "com.github.rtyley"
+        }
+    }
+
+    maven { url = "https://maven.architectury.dev/" }
+
     maven{ url= 'https://maven.aliyun.com/repository/public/'}
     maven{ url= 'https://maven.aliyun.com/repository/central/'}
     maven{ url= 'https://maven.aliyun.com/repository/qradle-plugin/'}
@@ -152,7 +169,7 @@ dependencies {
     compileOnly fg.deobf("mezz.jei:jei-1.20.1-forge-api:15.2.0.27")//jie
     runtimeOnly fg.deobf("mezz.jei:jei-1.20.1-forge:15.2.0.27")//jei
 
-    implementation fg.deobf("maven.modrinth:jade:11.13.2+forge")//玉
+    runtimeOnly fg.deobf("maven.modrinth:jade:11.13.2+forge")//玉
 
     // Example mod dependency using a mod jar from ./libs with a flat dir repository
     // This maps to ./libs/coolmod-${mc_version}-${coolmod_version}.jar

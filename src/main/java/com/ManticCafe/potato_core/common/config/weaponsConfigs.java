@@ -35,7 +35,6 @@ public class weaponsConfigs {
     public final ForgeConfigSpec.IntValue r_cd;
     public final ForgeConfigSpec.BooleanValue r_c;
 
-
     public weaponsConfigs(ForgeConfigSpec.Builder builder) {
 
         builder.comment("武器配置");

@@ -119,6 +119,14 @@ public class itemBaseBlockEntity extends BlockEntity {
         }
     }
 
+    public void setDisplayedItem(ItemStack stack) {
+        itemHandler.setStackInSlot(0, stack);
+        setChanged();
+        if (level != null) {
+            level.sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), 3);
+        }
+    }
+
     @Override
     public void load(CompoundTag tag) {
         super.load(tag);
