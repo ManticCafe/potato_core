@@ -21,17 +21,30 @@ public class lightningCrafting {
                 new ItemStack(itemhandler.mysterious_potato.get(), 1),//输出
                 new ItemStack(Items.POTATO, 1),//主要输入
                 new ItemStack(Items.POTATO, 1),//次要输入
-                new ItemStack(Items.POTATO, 1),
-                new ItemStack(Items.POTATO, 1),
-                new ItemStack(Items.POTATO, 1)
+                new ItemStack(Items.POTATO, 1),//次要输入
+                new ItemStack(Items.POTATO, 1),//次要输入
+                new ItemStack(Items.POTATO, 1)//次要输入
+        );
+
+        registerRecipeArray(
+                new ItemStack(itemhandler.potato_crystal.get(),4),
+                new ItemStack(Items.ANCIENT_DEBRIS),
+                new ItemStack(itemhandler.mysterious_potato.get()),
+                new ItemStack(Items.ECHO_SHARD),
+                new ItemStack(itemhandler.mysterious_potato.get()),
+                new ItemStack(Items.AMETHYST_SHARD),
+                new ItemStack(itemhandler.mysterious_potato.get()),
+                new ItemStack(Items.NETHERITE_SCRAP),
+                new ItemStack(itemhandler.mysterious_potato.get()),
+                new ItemStack(Items.PRISMARINE_SHARD)
         );
 
     }
-
+    //为KubeJS预留的方法
     public static void registerRecipeArray(ItemStack output, ItemStack mainInput, ItemStack... otherInputs) {
         registerRecipe(output, mainInput, otherInputs);
     }
-
+    //为KubeJS预留的方法
     public static void registerRecipe(ItemStack output, ItemStack mainInput, ItemStack... otherInputs) {
         if (output.getCount() <= 0 || output.getCount() > 64) {
             throw new IllegalArgumentException("输出物品数量必须在1-64之间，但得到: " + output.getCount());
@@ -55,17 +68,18 @@ public class lightningCrafting {
         return MAX_SURROUNDING_INPUTS;
     }
 
-    public static void clearAllRecipes() {
+    //为KubeJS预留的方法
+    public static void removeAllRecipes() {
         RECIPES.clear();
     }
-
+    //为KubeJS预留的方法
     public static void removeRecipesByOutput(ItemStack output) {
         RECIPES.removeIf(recipe ->
                 recipe.getOutput().getItem() == output.getItem() &&
                         recipe.getOutput().getCount() == output.getCount()
         );
     }
-
+    //为KubeJS预留的方法
     public static void removeRecipesByCenterInput(ItemStack centerInput) {
         RECIPES.removeIf(recipe ->
                 recipe.getRequiredCenterItem().getItem() == centerInput.getItem()
@@ -73,19 +87,19 @@ public class lightningCrafting {
     }
 
 
-    public static boolean recipeExists(ItemStack output, ItemStack centerInput, List<ItemStack> surroundingInputs) {
-        for (StructureRecipe recipe : RECIPES) {
-            if (recipe.getOutput().getItem() == output.getItem() &&
-                    recipe.getOutput().getCount() == output.getCount() &&
-                    recipe.getRequiredCenterItem().getItem() == centerInput.getItem()) {
-
-                if (areIngredientListsEqual(recipe.getRequiredSurroundingItems(), surroundingInputs)) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
+//    public static boolean recipeExists(ItemStack output, ItemStack centerInput, List<ItemStack> surroundingInputs) {
+//        for (StructureRecipe recipe : RECIPES) {
+//            if (recipe.getOutput().getItem() == output.getItem() &&
+//                    recipe.getOutput().getCount() == output.getCount() &&
+//                    recipe.getRequiredCenterItem().getItem() == centerInput.getItem()) {
+//
+//                if (areIngredientListsEqual(recipe.getRequiredSurroundingItems(), surroundingInputs)) {
+//                    return true;
+//                }
+//            }
+//        }
+//        return false;
+//    }
 
     private static boolean areIngredientListsEqual(List<ItemStack> list1, List<ItemStack> list2) {
         if (list1.size() != list2.size()) {

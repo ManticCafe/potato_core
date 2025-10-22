@@ -20,9 +20,11 @@ public class configManager {
         COMMON_SPEC = commonPair.getRight();
     }
 
+
     public static void register() {
         LOGGER.info("Registering configuration with Forge...");
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, COMMON_SPEC, "potato_core/weaponsConfigs.toml");
+
         LOGGER.info("Configuration registered, waiting for load event...");
     }
 }

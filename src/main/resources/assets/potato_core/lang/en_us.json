@@ -40,5 +40,7 @@
     "mining_mode.potato_core.fast": "§eFast",
     "mining_mode.potato_core.very_fast": "§eVery Fast",
     
-    "message.potato_core.mode_switch": "§6Current Mode: %s §7(Speed: %s§7)"
+    "message.potato_core.mode_switch": "§6Current Mode: %s §7(Speed: %s§7)",
+
+    "jei.category.potato_core.lightning_crafting": "Lightning Strike Synthesis"
 }

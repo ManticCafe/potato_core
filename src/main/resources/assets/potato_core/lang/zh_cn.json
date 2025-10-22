@@ -40,5 +40,7 @@
     "mining_mode.potato_core.fast": "§e快速",
     "mining_mode.potato_core.very_fast": "§e极快",
     
-    "message.potato_core.mode_switch": "§6当前档位: %s §7(速度: %s§7)"
+    "message.potato_core.mode_switch": "§6当前档位: %s §7(速度: %s§7)",
+
+    "jei.category.potato_core.lightning_crafting": "雷击合成"
 }

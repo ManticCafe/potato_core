@@ -19,6 +19,7 @@ public class main {
     private static final Logger LOGGER = LogUtils.getLogger();
 
     public main(FMLJavaModLoadingContext context) {
+
         LOGGER.info("Starting mod initialization...");
 
         LOGGER.info("Registering configuration manager...");
@@ -53,6 +54,8 @@ public class main {
                 LOGGER.error("Configuration cache failed to initialize in common setup");
             }
         }
+
+        com.ManticCafe.potato_core.Jei.JEIIntegrationManager.init();
 
         LOGGER.info("Potato Core mod common setup complete");
     }
