@@ -17,11 +17,8 @@ public class mysterious_potato extends Item {
 
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
-        // 添加一个灰色的提示信息
-        tooltip.add(Component.translatable("tooltip.potato_core.mysterious_potato").withStyle(ChatFormatting.BLUE));
 
-        // 你可以添加更多的提示信息
-        // tooltip.add(Component.translatable("tooltip.potato_core.magic_potato.line2").withStyle(ChatFormatting.RED));
+        tooltip.add(Component.translatable("tooltip.potato_core.mysterious_potato").withStyle(ChatFormatting.BLUE));
 
         super.appendHoverText(stack, level, tooltip, flag);
     }

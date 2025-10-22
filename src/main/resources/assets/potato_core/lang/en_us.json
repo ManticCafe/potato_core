@@ -1,0 +1,43 @@
+{
+    "//方块本地化：":" ",
+    "block.potato_core.item_base_block": "Item Base Block",
+
+    "//物品本地化：":" ",
+    "item.potato_core.the_last_sword": "The Last Sword",
+    "item.potato_core.the_last_sword_level2": "The Last Sword (Level 2)",
+    "item.potato_core.the_last_sword_level3": "The Last Sword (Level 3)",
+    "item.potato_core.the_last_sword_level4": "The Last Sword (Level 4)",
+    "item.potato_core.the_last_sword_level5": "The Last Sword (Level 5)",
+    "item.potato_core.the_last_sword_level6": "The Last Sword (Level 6)",
+    "item.potato_core.the_last_sword_level7": "The Last Sword (Level 7)",
+    "item.potato_core.the_last_sword_level8": "The Last Sword (Level 8)",
+    "item.potato_core.the_last_sword_level9": "The Last Sword (Level 9)",
+    "item.potato_core.the_last_sword_final": "The Last Sword (Final?)",
+    "item.potato_core.real_the_last_sword": "Potato Sword",
+    "item.potato_core.mysterious_potato": "Mysterious Potato",
+    "item.potato_core.the_last_ingot": "Ultimate Ingot",
+    "item.potato_core.the_last_axe": "The Last Axe",
+    "item.potato_core.the_last_pickaxe": "The Last Pickaxe",
+    "item.potato_core.the_last_shovel": "The Last Shovel",
+    "item.potato_core.potato_star": "Potato Star",
+    "item.potato_core.potato_crystal": "Potato Crystal",
+    "item.potato_core.item_base_block": "Item Base Block",
+
+    "//物品栏本地化：":" ",
+    "itemGroup.potato_core": "Potato Core",
+
+    "//tooltip本地化":"   ",
+    "tooltip.potato_core.mysterious_potato": "A potato from another dimension",
+    "tooltip.potato_core.mining_mode": "§6Current Mode",
+    "tooltip.potato_core.mining_speed": "§7Mining Speed",
+    "tooltip.potato_core.sneak_right_click": "§8Sneak + Right Click to switch mode",
+    "tooltip.potato_core.mining_mode_disabled": "§6Mining Mode: §cDisabled, please change config to enable",
+    
+    "mining_mode.potato_core.off": "§eOff",
+    "mining_mode.potato_core.slow": "§eSlow", 
+    "mining_mode.potato_core.normal": "§eNormal",
+    "mining_mode.potato_core.fast": "§eFast",
+    "mining_mode.potato_core.very_fast": "§eVery Fast",
+    
+    "message.potato_core.mode_switch": "§6Current Mode: %s §7(Speed: %s§7)"
+}

@@ -2,7 +2,6 @@
     "//方块本地化：":" ",
     "block.potato_core.item_base_block": "物品基座",
 
-
     "//物品本地化：":" ",
     "item.potato_core.the_last_sword": "最终之剑",
     "item.potato_core.the_last_sword_level2": "最终之剑(二级)",
@@ -19,15 +18,26 @@
     "item.potato_core.the_last_ingot": "终极锭",
     "item.potato_core.the_last_axe": "最终之斧",
     "item.potato_core.the_last_pickaxe": "最终之镐",
+    "item.potato_core.the_last_shovel": "最终之铲",
     "item.potato_core.potato_star": "土豆之星",
     "item.potato_core.potato_crystal": "土豆结晶",
     "item.potato_core.item_base_block": "物品基座",
 
-
     "//物品栏本地化：":" ",
     "itemGroup.potato_core": "土豆核心",
 
-    
     "//tooltip本地化":"   ",
-    "tooltip.potato_core.mysterious_potato": "一颗来自另一个次元的土豆"
+    "tooltip.potato_core.mysterious_potato": "一颗来自另一个次元的土豆",
+    "tooltip.potato_core.mining_mode": "§6当前档位",
+    "tooltip.potato_core.mining_speed": "§7挖掘速度",
+    "tooltip.potato_core.sneak_right_click": "§8潜行右键切换挖掘模式",
+    "tooltip.potato_core.mining_mode_disabled": "§6挖掘模式: §c未启用,请更改配置文件以开启",
+    
+    "mining_mode.potato_core.off": "§e关闭",
+    "mining_mode.potato_core.slow": "§e慢速", 
+    "mining_mode.potato_core.normal": "§e普通",
+    "mining_mode.potato_core.fast": "§e快速",
+    "mining_mode.potato_core.very_fast": "§e极快",
+    
+    "message.potato_core.mode_switch": "§6当前档位: %s §7(速度: %s§7)"
 }

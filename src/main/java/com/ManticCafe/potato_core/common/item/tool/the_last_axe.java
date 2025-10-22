@@ -24,7 +24,13 @@ public class the_last_axe extends AxeItem {
     private static final int MIN_LEVEL = 0;
     private static final int MAX_LEVEL = 4;
     private static final float[] SPEED_LEVELS = {0.0F, 1.0F, 10.0F, 100.0F, 10000.0F};
-    private static final String[] LEVEL_NAMES = {"关闭", "慢速", "普通", "快速", "极快"};
+    private static final String[] LEVEL_KEYS = {
+            "mining_mode.potato_core.off",
+            "mining_mode.potato_core.slow",
+            "mining_mode.potato_core.normal",
+            "mining_mode.potato_core.fast",
+            "mining_mode.potato_core.very_fast"
+    };
 
     public the_last_axe() {
         super(infinite_tier.INFINITE_TIER, 0, 12, new Item.Properties().durability(-1));
@@ -35,15 +41,15 @@ public class the_last_axe extends AxeItem {
         super.appendHoverText(stack, level, tooltip, flag);
 
         int miningLevel = getMiningSpeedLevel(stack);
-        String miningName = LEVEL_NAMES[miningLevel];
+        Component miningName = Component.translatable(LEVEL_KEYS[miningLevel]);
         float miningSpeed = SPEED_LEVELS[miningLevel];
 
-        tooltip.add(Component.literal("§6挖掘模式: §e" + miningName));
+        tooltip.add(Component.translatable("tooltip.potato_core.mining_mode").append(": ").append(miningName));
         if (miningLevel > 0) {
-            tooltip.add(Component.literal("§7挖掘速度: §a" + miningSpeed));
+            tooltip.add(Component.translatable("tooltip.potato_core.mining_speed").append(": §a" + miningSpeed));
         }
 
-        tooltip.add(Component.literal("§8潜行右键切换挖掘模式"));
+        tooltip.add(Component.translatable("tooltip.potato_core.sneak_right_click"));
     }
 
     @Override
@@ -57,10 +63,13 @@ public class the_last_axe extends AxeItem {
 
                 setMiningSpeedLevel(itemstack, newLevel);
 
-                String levelName = LEVEL_NAMES[newLevel];
+                Component levelName = Component.translatable(LEVEL_KEYS[newLevel]);
                 float speedValue = SPEED_LEVELS[newLevel];
 
-                player.displayClientMessage(Component.literal("§6当前档位: §e" + levelName + " §7(速度: " + speedValue + ")"), true);
+                Component speedValueText = Component.literal(String.valueOf(speedValue)).withStyle(net.minecraft.ChatFormatting.GREEN);
+                Component detailedMessage = Component.translatable("message.potato_core.mode_switch",
+                        levelName, speedValueText);
+                player.displayClientMessage(detailedMessage, true);
             }
 
             return InteractionResultHolder.sidedSuccess(itemstack, level.isClientSide());

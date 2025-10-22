@@ -1,24 +1,23 @@
-// the_last_pickaxe.java
 package com.ManticCafe.potato_core.common.item.tool;
 
 import com.ManticCafe.potato_core.common.tier.infinite_tier;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.PickaxeItem;
-import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.Mth;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ShovelItem;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class the_last_pickaxe extends PickaxeItem {
+public class the_last_shovel extends ShovelItem {
 
     private static final int MIN_LEVEL = 0;
     private static final int MAX_LEVEL = 4;
@@ -31,7 +30,7 @@ public class the_last_pickaxe extends PickaxeItem {
             "mining_mode.potato_core.very_fast"
     };
 
-    public the_last_pickaxe() {
+    public the_last_shovel() {
         super(infinite_tier.INFINITE_TIER, 0, 12, new Item.Properties().durability(-1));
     }
 
