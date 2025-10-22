@@ -31,6 +31,7 @@ public class tabhandler {
                         pOutput.accept(itemhandler.the_last_pickaxe.get());
                         pOutput.accept(itemhandler.the_last_axe.get());
                         pOutput.accept(itemhandler.the_last_shovel.get());
+                        pOutput.accept(itemhandler.the_last_hoe.get());
                         pOutput.accept(itemhandler.mysterious_potato.get());
                         pOutput.accept(itemhandler.the_last_ingot.get());
                         pOutput.accept(itemhandler.potato_star.get());

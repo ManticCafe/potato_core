@@ -3,6 +3,7 @@ package com.ManticCafe.potato_core.common.item;
 import com.ManticCafe.potato_core.common.block.blockhandler;
 import com.ManticCafe.potato_core.common.item.item.mysterious_potato;
 import com.ManticCafe.potato_core.common.item.tool.the_last_axe;
+import com.ManticCafe.potato_core.common.item.tool.the_last_hoe;
 import com.ManticCafe.potato_core.common.item.tool.the_last_pickaxe;
 import com.ManticCafe.potato_core.common.item.tool.the_last_shovel;
 import com.ManticCafe.potato_core.common.item.weapon.the_last_sword;
@@ -33,7 +34,8 @@ public class itemhandler {
     public static final RegistryObject<Item> real_the_last_sword = ITEMS.register("real_the_last_sword", () -> new real_the_last_sword());
     public static final RegistryObject<Item> the_last_axe = ITEMS.register("the_last_axe", () -> new the_last_axe());
     public static final RegistryObject<Item> the_last_pickaxe = ITEMS.register("the_last_pickaxe", () -> new the_last_pickaxe());
-    public static final RegistryObject<Item> the_last_shovel = ITEMS.register("the_last_shovel",() -> new the_last_shovel());
+    public static final RegistryObject<Item> the_last_shovel = ITEMS.register("the_last_shovel", () -> new the_last_shovel());
+    public static final RegistryObject<Item> the_last_hoe = ITEMS.register("the_last_hoe", () -> new the_last_hoe());
     public static final RegistryObject<Item> mysterious_potato = ITEMS.register("mysterious_potato", () -> new mysterious_potato());
     public static final RegistryObject<Item> the_last_ingot = ITEMS.register("the_last_ingot", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> potato_crystal = ITEMS.register("potato_crystal", () -> new Item(new Item.Properties()));
