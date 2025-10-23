@@ -42,5 +42,6 @@
     
     "message.potato_core.mode_switch": "§6当前档位: %s §7(速度: %s§7)",
 
-    "jei.category.potato_core.lightning_crafting": "雷击合成"
+    "jei.category.potato_core.lightning_crafting": "雷击合成",
+    "jei.tooltip.potato_core.lightning_strike": "雷击"
 }

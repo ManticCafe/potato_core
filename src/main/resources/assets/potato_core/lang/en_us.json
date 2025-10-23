@@ -42,5 +42,6 @@
     
     "message.potato_core.mode_switch": "§6Current Mode: %s §7(Speed: %s§7)",
 
-    "jei.category.potato_core.lightning_crafting": "Lightning Strike Synthesis"
+    "jei.category.potato_core.lightning_crafting": "Lightning Strike Synthesis",
+     "jei.tooltip.potato_core.lightning_strike": "Lightning Strike"
 }

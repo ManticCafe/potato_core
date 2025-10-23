@@ -28,7 +28,7 @@ public class lightningCrafting {
 
         registerRecipeArray(
                 new ItemStack(itemhandler.potato_crystal.get(),4),
-                new ItemStack(Items.ANCIENT_DEBRIS),
+                new ItemStack(Items.ENDER_PEARL),
                 new ItemStack(itemhandler.mysterious_potato.get()),
                 new ItemStack(Items.ECHO_SHARD),
                 new ItemStack(itemhandler.mysterious_potato.get()),
