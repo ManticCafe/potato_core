@@ -27,8 +27,23 @@ public class lightningCrafting {
         );
 
         registerRecipeArray(
+                new ItemStack(Items.DRAGON_EGG),
+                new ItemStack(Items.SNIFFER_EGG),
+
+                new ItemStack(Items.DRAGON_HEAD),
+                new ItemStack(Items.DRAGON_BREATH),
+                new ItemStack(Items.DRAGON_BREATH),
+                new ItemStack(Items.DRAGON_BREATH),
+                new ItemStack(Items.NETHER_STAR),
+                new ItemStack(Items.NETHERITE_INGOT),
+                new ItemStack(Items.NETHERITE_INGOT),
+                new ItemStack(Items.NETHERITE_INGOT)
+        );
+
+        registerRecipeArray(
                 new ItemStack(itemhandler.potato_crystal.get(),4),
-                new ItemStack(Items.ENDER_PEARL),
+                new ItemStack(Items.DRAGON_EGG),
+
                 new ItemStack(itemhandler.mysterious_potato.get()),
                 new ItemStack(Items.ECHO_SHARD),
                 new ItemStack(itemhandler.mysterious_potato.get()),
@@ -39,6 +54,229 @@ public class lightningCrafting {
                 new ItemStack(Items.PRISMARINE_SHARD)
         );
 
+        registerRecipeArray(
+                new ItemStack(itemhandler.potato_star.get()),
+                new ItemStack(Items.NETHER_STAR),
+
+                new ItemStack(itemhandler.mysterious_potato.get()),
+                new ItemStack(Items.DRAGON_BREATH),
+                new ItemStack(itemhandler.mysterious_potato.get()),
+                new ItemStack(itemhandler.potato_crystal.get()),
+                new ItemStack(itemhandler.mysterious_potato.get()),
+                new ItemStack(Items.DRAGON_BREATH),
+                new ItemStack(itemhandler.mysterious_potato.get()),
+                new ItemStack(itemhandler.potato_crystal.get())
+        );
+
+        registerRecipeArray(
+                new ItemStack(itemhandler.the_last_sword.get()),
+                new ItemStack(Items.NETHERITE_SWORD),
+
+                new ItemStack(itemhandler.potato_star.get()),
+                new ItemStack(itemhandler.potato_crystal.get()),
+                new ItemStack(itemhandler.potato_star.get()),
+                new ItemStack(itemhandler.potato_crystal.get()),
+                new ItemStack(itemhandler.potato_star.get()),
+                new ItemStack(itemhandler.potato_crystal.get()),
+                new ItemStack(itemhandler.potato_star.get()),
+                new ItemStack(itemhandler.potato_crystal.get())
+        );
+
+        registerRecipeArray(
+                new ItemStack(itemhandler.the_last_ingot.get(),3),
+                new ItemStack(itemhandler.potato_crystal.get()),
+
+                new ItemStack(itemhandler.potato_star.get()),
+                new ItemStack(Items.GOLD_INGOT),
+                new ItemStack(itemhandler.potato_star.get()),
+                new ItemStack(Items.IRON_INGOT),
+                new ItemStack(itemhandler.potato_star.get()),
+                new ItemStack(Items.COPPER_INGOT),
+                new ItemStack(itemhandler.potato_star.get()),
+                new ItemStack(Items.NETHERITE_INGOT)
+        );
+
+        registerRecipeArray(
+                new ItemStack(itemhandler.the_last_sword_level2.get()),
+                new ItemStack(itemhandler.the_last_sword.get()),
+
+                new ItemStack(itemhandler.potato_star.get()),
+                new ItemStack(itemhandler.the_last_ingot.get()),
+                new ItemStack(itemhandler.potato_star.get()),
+                new ItemStack(itemhandler.the_last_ingot.get()),
+                new ItemStack(itemhandler.potato_star.get()),
+                new ItemStack(itemhandler.the_last_ingot.get()),
+                new ItemStack(itemhandler.potato_star.get()),
+                new ItemStack(itemhandler.the_last_ingot.get())
+        );
+
+        registerRecipeArray(
+                new ItemStack(itemhandler.the_last_sword_level3.get()),
+                new ItemStack(itemhandler.the_last_sword_level2.get()),
+
+                new ItemStack(itemhandler.potato_star.get()),
+                new ItemStack(itemhandler.the_last_ingot.get()),
+                new ItemStack(itemhandler.potato_star.get()),
+                new ItemStack(itemhandler.the_last_ingot.get()),
+                new ItemStack(itemhandler.potato_star.get()),
+                new ItemStack(itemhandler.the_last_ingot.get()),
+                new ItemStack(itemhandler.potato_star.get()),
+                new ItemStack(itemhandler.the_last_ingot.get())
+        );
+
+        registerRecipeArray(
+                new ItemStack(itemhandler.the_last_sword_level4.get()),
+                new ItemStack(itemhandler.the_last_sword_level3.get()),
+
+                new ItemStack(itemhandler.potato_star.get()),
+                new ItemStack(itemhandler.the_last_ingot.get()),
+                new ItemStack(itemhandler.potato_star.get()),
+                new ItemStack(itemhandler.the_last_ingot.get()),
+                new ItemStack(itemhandler.potato_star.get()),
+                new ItemStack(itemhandler.the_last_ingot.get()),
+                new ItemStack(itemhandler.potato_star.get()),
+                new ItemStack(itemhandler.the_last_ingot.get())
+        );
+
+        registerRecipeArray(
+                new ItemStack(itemhandler.the_last_sword_level5.get()),
+                new ItemStack(itemhandler.the_last_sword_level4.get()),
+
+                new ItemStack(Items.DRAGON_EGG),
+                new ItemStack(itemhandler.the_last_ingot.get()),
+                new ItemStack(Items.DRAGON_EGG),
+                new ItemStack(itemhandler.the_last_ingot.get()),
+                new ItemStack(Items.DRAGON_EGG),
+                new ItemStack(itemhandler.the_last_ingot.get()),
+                new ItemStack(Items.DRAGON_EGG),
+                new ItemStack(itemhandler.the_last_ingot.get())
+        );
+
+        registerRecipeArray(
+                new ItemStack(itemhandler.the_last_sword_level6.get()),
+                new ItemStack(itemhandler.the_last_sword_level5.get()),
+
+                new ItemStack(Items.DRAGON_EGG),
+                new ItemStack(itemhandler.the_last_ingot.get()),
+                new ItemStack(Items.DRAGON_EGG),
+                new ItemStack(itemhandler.the_last_ingot.get()),
+                new ItemStack(Items.DRAGON_EGG),
+                new ItemStack(itemhandler.the_last_ingot.get()),
+                new ItemStack(Items.DRAGON_EGG),
+                new ItemStack(itemhandler.the_last_ingot.get())
+        );
+
+        registerRecipeArray(
+                new ItemStack(itemhandler.the_last_sword_level7.get()),
+                new ItemStack(itemhandler.the_last_sword_level6.get()),
+
+                new ItemStack(Items.DRAGON_EGG),
+                new ItemStack(itemhandler.the_last_ingot.get()),
+                new ItemStack(Items.DRAGON_EGG),
+                new ItemStack(itemhandler.the_last_ingot.get()),
+                new ItemStack(Items.DRAGON_EGG),
+                new ItemStack(itemhandler.the_last_ingot.get()),
+                new ItemStack(Items.DRAGON_EGG),
+                new ItemStack(itemhandler.the_last_ingot.get())
+        );
+
+        registerRecipeArray(
+                new ItemStack(itemhandler.the_last_sword_level8.get()),
+                new ItemStack(itemhandler.the_last_sword_level7.get()),
+
+                new ItemStack(Items.DRAGON_EGG),
+                new ItemStack(itemhandler.the_last_ingot.get()),
+                new ItemStack(Items.DRAGON_EGG),
+                new ItemStack(itemhandler.the_last_ingot.get()),
+                new ItemStack(Items.DRAGON_EGG),
+                new ItemStack(itemhandler.the_last_ingot.get()),
+                new ItemStack(Items.DRAGON_EGG),
+                new ItemStack(itemhandler.the_last_ingot.get())
+        );
+
+        registerRecipeArray(
+                new ItemStack(itemhandler.the_last_sword_final.get()),
+                new ItemStack(itemhandler.the_last_sword_level8.get()),
+
+                new ItemStack(Items.DRAGON_EGG),
+                new ItemStack(itemhandler.the_last_ingot.get()),
+                new ItemStack(Items.DRAGON_EGG),
+                new ItemStack(itemhandler.the_last_ingot.get()),
+                new ItemStack(Items.DRAGON_EGG),
+                new ItemStack(itemhandler.the_last_ingot.get()),
+                new ItemStack(Items.DRAGON_EGG),
+                new ItemStack(itemhandler.the_last_ingot.get())
+        );
+
+        registerRecipeArray(
+                new ItemStack(itemhandler.real_the_last_sword.get()),
+                new ItemStack(itemhandler.the_last_sword_final.get()),
+
+                new ItemStack(itemhandler.the_last_axe.get()),
+                new ItemStack(itemhandler.potato_crystal.get()),
+                new ItemStack(itemhandler.the_last_pickaxe.get()),
+                new ItemStack(itemhandler.potato_star.get()),
+                new ItemStack(itemhandler.the_last_hoe.get()),
+                new ItemStack(itemhandler.potato_crystal.get()),
+                new ItemStack(itemhandler.the_last_shovel.get()),
+                new ItemStack(itemhandler.potato_star.get())
+        );
+
+        registerRecipeArray(
+                new ItemStack(itemhandler.the_last_pickaxe.get()),
+                new ItemStack(Items.NETHERITE_PICKAXE),
+
+                new ItemStack(itemhandler.potato_star.get()),
+                new ItemStack(itemhandler.potato_crystal.get()),
+                new ItemStack(itemhandler.potato_star.get()),
+                new ItemStack(itemhandler.potato_crystal.get()),
+                new ItemStack(itemhandler.potato_star.get()),
+                new ItemStack(itemhandler.potato_crystal.get()),
+                new ItemStack(itemhandler.potato_star.get()),
+                new ItemStack(itemhandler.potato_crystal.get())
+        );
+
+        registerRecipeArray(
+                new ItemStack(itemhandler.the_last_axe.get()),
+                new ItemStack(Items.NETHERITE_AXE),
+
+                new ItemStack(itemhandler.potato_star.get()),
+                new ItemStack(itemhandler.potato_crystal.get()),
+                new ItemStack(itemhandler.potato_star.get()),
+                new ItemStack(itemhandler.potato_crystal.get()),
+                new ItemStack(itemhandler.potato_star.get()),
+                new ItemStack(itemhandler.potato_crystal.get()),
+                new ItemStack(itemhandler.potato_star.get()),
+                new ItemStack(itemhandler.potato_crystal.get())
+        );
+
+        registerRecipeArray(
+                new ItemStack(itemhandler.the_last_hoe.get()),
+                new ItemStack(Items.NETHERITE_HOE),
+
+                new ItemStack(itemhandler.potato_star.get()),
+                new ItemStack(itemhandler.potato_crystal.get()),
+                new ItemStack(itemhandler.potato_star.get()),
+                new ItemStack(itemhandler.potato_crystal.get()),
+                new ItemStack(itemhandler.potato_star.get()),
+                new ItemStack(itemhandler.potato_crystal.get()),
+                new ItemStack(itemhandler.potato_star.get()),
+                new ItemStack(itemhandler.potato_crystal.get())
+        );
+
+        registerRecipeArray(
+                new ItemStack(itemhandler.the_last_shovel.get()),
+                new ItemStack(Items.NETHERITE_SHOVEL),
+
+                new ItemStack(itemhandler.potato_star.get()),
+                new ItemStack(itemhandler.potato_crystal.get()),
+                new ItemStack(itemhandler.potato_star.get()),
+                new ItemStack(itemhandler.potato_crystal.get()),
+                new ItemStack(itemhandler.potato_star.get()),
+                new ItemStack(itemhandler.potato_crystal.get()),
+                new ItemStack(itemhandler.potato_star.get()),
+                new ItemStack(itemhandler.potato_crystal.get())
+        );
     }
     //为KubeJS预留的方法
     public static void registerRecipeArray(ItemStack output, ItemStack mainInput, ItemStack... otherInputs) {
