@@ -23,7 +23,7 @@ public class configManager {
 
     public static void register() {
         LOGGER.info("Registering configuration with Forge...");
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, COMMON_SPEC, "potato_core/weaponsConfigs.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, COMMON_SPEC, "ManticCafe/potato_core/weaponsConfigs.toml");
 
         LOGGER.info("Configuration registered, waiting for load event...");
     }
