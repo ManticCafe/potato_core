@@ -407,7 +407,6 @@ public class lightningCrafting {
     }
 
     // 物品配方
-
     public static void registerRecipeArray(ItemStack output, ItemStack mainInput, ItemStack... otherInputs) {
         registerItemRecipe(output, mainInput, otherInputs);
     }
@@ -420,7 +419,6 @@ public class lightningCrafting {
     }
 
     // 实体配方
-
     public static void registerEntityRecipeArray(EntityType<?> entityType, ItemStack mainInput, ItemStack... otherInputs) {
         registerEntityRecipe(entityType, mainInput, 2, otherInputs);
     }
