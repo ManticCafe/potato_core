@@ -8,11 +8,9 @@ import mezz.jei.api.registration.IRecipeCategoryRegistration;
 import mezz.jei.api.registration.IRecipeRegistration;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import org.jetbrains.annotations.NotNull;
-import com.ManticCafe.potato_core.Jei.*;
 import com.ManticCafe.potato_core.common.item.itemhandler;
 
 import java.util.ArrayList;
@@ -30,20 +28,18 @@ public class PotatoCoreJEIPlugin implements IModPlugin {
 
     @Override
     public void registerCategories(IRecipeCategoryRegistration registration) {
-
         ItemStack categoryIcon = new ItemStack(Items.LIGHTNING_ROD);
         registration.addRecipeCategories(new LightningCraftingCategory(registration.getJeiHelpers().getGuiHelper(), categoryIcon));
     }
 
     @Override
     public void registerRecipes(@NotNull IRecipeRegistration registration) {
-
         if (Minecraft.getInstance().level == null) return;
-
 
         List<LightningCraftingJEIRecipe> jeiRecipes = new ArrayList<>();
 
-        for (lightningCrafting.StructureRecipe recipe : lightningCrafting.getAllRecipes()) {
+        // 只获取物品配方，忽略实体召唤配方
+        for (lightningCrafting.ItemRecipe recipe : lightningCrafting.getAllItemRecipes()) {
             jeiRecipes.add(new LightningCraftingJEIRecipe(
                     recipe.getRequiredCenterItem(),
                     recipe.getRequiredSurroundingItems(),
@@ -51,13 +47,11 @@ public class PotatoCoreJEIPlugin implements IModPlugin {
             ));
         }
 
-
         registration.addRecipes(LightningCraftingCategory.RECIPE_TYPE, jeiRecipes);
     }
 
     @Override
     public void registerRecipeCatalysts(@NotNull IRecipeCatalystRegistration registration) {
-
         ItemStack catalyst = new ItemStack(itemhandler.ITEM_BASE_BLOCK_ITEM.get());
         registration.addRecipeCatalyst(catalyst, LightningCraftingCategory.RECIPE_TYPE);
     }

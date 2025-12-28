@@ -52,30 +52,42 @@ public class StructureCraftingProcessor {
             return CraftingResult.failure();
         }
 
-        lightningCrafting.StructureRecipe matchedRecipe = null;
-        for (lightningCrafting.StructureRecipe recipe : lightningCrafting.getAllRecipes()) {
-            if (recipe.matches(centerItem, surroundingItems)) {
-                matchedRecipe = recipe;
-                break;
+        // 如果是物品配方
+        if (matchResult.isItemRecipe()) {
+            // 查找匹配的配方来消耗物品
+            lightningCrafting.ItemRecipe matchedRecipe = null;
+            for (lightningCrafting.ItemRecipe recipe : lightningCrafting.getAllItemRecipes()) {
+                if (recipe.matches(centerItem, surroundingItems)) {
+                    matchedRecipe = recipe;
+                    break;
+                }
             }
+
+            if (matchedRecipe == null) {
+                return CraftingResult.failure();
+            }
+
+            consumeItemsForCrafting(level, centerPos, checkResult.getStructureBlocks(), matchedRecipe);
+
+            if (level.getBlockEntity(centerPos) instanceof itemBaseBlockEntity centerEntity) {
+                centerEntity.setDisplayedItem(matchResult.getItemResult());
+            }
+
+            return CraftingResult.success(matchResult.getItemResult(), lightningCrafting.RecipeType.ITEM);
         }
 
-        if (matchedRecipe == null) {
-            return CraftingResult.failure();
+        // 如果是实体配方，返回特定结果，由EntityCraftingProcessor处理
+        if (matchResult.isEntityRecipe()) {
+            return CraftingResult.successEntity(matchResult.getEntityResult());
         }
 
-        consumeItemsForCrafting(level, centerPos, checkResult.getStructureBlocks(), matchedRecipe);
-
-        if (level.getBlockEntity(centerPos) instanceof itemBaseBlockEntity centerEntity) {
-            centerEntity.setDisplayedItem(matchResult.getResult());
-        }
-
-        return CraftingResult.success(matchResult.getResult());
+        return CraftingResult.failure();
     }
 
     private static void consumeItemsForCrafting(Level level, BlockPos centerPos,
                                                 List<BlockPos> structureBlocks,
-                                                lightningCrafting.StructureRecipe recipe) {
+                                                lightningCrafting.BaseRecipe recipe) {
+        // 消耗中心物品
         if (level.getBlockEntity(centerPos) instanceof itemBaseBlockEntity centerEntity) {
             centerEntity.clearDisplayedItem();
         }
@@ -111,22 +123,36 @@ public class StructureCraftingProcessor {
 
     public static class CraftingResult {
         private final boolean success;
-        private final ItemStack result;
+        private final ItemStack itemResult;
+        private final lightningCrafting.EntityRecipe entityResult;
+        private final lightningCrafting.RecipeType type;
 
-        private CraftingResult(boolean success, ItemStack result) {
+        private CraftingResult(boolean success, ItemStack itemResult,
+                               lightningCrafting.EntityRecipe entityResult,
+                               lightningCrafting.RecipeType type) {
             this.success = success;
-            this.result = result;
+            this.itemResult = itemResult;
+            this.entityResult = entityResult;
+            this.type = type;
         }
 
-        public static CraftingResult success(ItemStack result) {
-            return new CraftingResult(true, result);
+        public static CraftingResult success(ItemStack result, lightningCrafting.RecipeType type) {
+            return new CraftingResult(true, result, null, type);
+        }
+
+        public static CraftingResult successEntity(lightningCrafting.EntityRecipe entityResult) {
+            return new CraftingResult(true, ItemStack.EMPTY, entityResult, lightningCrafting.RecipeType.ENTITY);
         }
 
         public static CraftingResult failure() {
-            return new CraftingResult(false, ItemStack.EMPTY);
+            return new CraftingResult(false, ItemStack.EMPTY, null, null);
         }
 
         public boolean isSuccess() { return success; }
-        public ItemStack getResult() { return result; }
+        public ItemStack getItemResult() { return itemResult; }
+        public lightningCrafting.EntityRecipe getEntityResult() { return entityResult; }
+        public lightningCrafting.RecipeType getType() { return type; }
+        public boolean isItemRecipe() { return type == lightningCrafting.RecipeType.ITEM; }
+        public boolean isEntityRecipe() { return type == lightningCrafting.RecipeType.ENTITY; }
     }
 }

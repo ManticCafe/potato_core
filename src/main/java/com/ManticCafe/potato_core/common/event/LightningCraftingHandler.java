@@ -1,10 +1,12 @@
 package com.ManticCafe.potato_core.common.event;
 
 import com.ManticCafe.potato_core.common.block.functionBlocks.itemBaseBlock;
+import com.ManticCafe.potato_core.common.crafting.EntityCraftingProcessor;
 import com.ManticCafe.potato_core.common.crafting.StructureCraftingProcessor;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.LightningBolt;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.event.entity.EntityStruckByLightningEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -23,7 +25,6 @@ public class LightningCraftingHandler {
         }
 
         BlockPos lightningPos = lightning.blockPosition();
-
         checkAndCraftInVolume(level, lightningPos);
     }
 
@@ -34,20 +35,38 @@ public class LightningCraftingHandler {
             for (int y = -1; y <= 1; y++) {
                 for (int z = -1; z <= 1; z++) {
                     BlockPos checkPos = centerPos.offset(x, y, z);
-
                     BlockState state = level.getBlockState(checkPos);
+
                     if (state.getBlock() instanceof itemBaseBlock) {
                         StructureCraftingProcessor.CraftingResult result =
                                 StructureCraftingProcessor.processCrafting(level, checkPos);
 
                         if (result.isSuccess()) {
-                            level.levelEvent(3001, checkPos, 0); // 末影龙生长效果
-                            level.playSound(null, checkPos,
-                                    net.minecraft.sounds.SoundEvents.LIGHTNING_BOLT_IMPACT,
-                                    net.minecraft.sounds.SoundSource.BLOCKS, 1.0F, 1.0F);
+                            if (result.isItemRecipe()) {
+                                level.levelEvent(3001, checkPos, 0); // 末影龙生长效果
+                                level.playSound(null, checkPos,
+                                        net.minecraft.sounds.SoundEvents.LIGHTNING_BOLT_IMPACT,
+                                        net.minecraft.sounds.SoundSource.BLOCKS, 1.0F, 1.0F);
 
-                            foundStructure = true;
-                            break;
+                                foundStructure = true;
+                            } else if (result.isEntityRecipe()) {
+                                EntityCraftingProcessor.EntityCraftingResult entityResult =
+                                        EntityCraftingProcessor.processEntityCrafting(level, checkPos);
+
+                                if (entityResult.isSuccess()) {
+                                    level.levelEvent(2001, checkPos, net.minecraft.world.level.block.Block.getId(
+                                            Blocks.NETHER_PORTAL.defaultBlockState()));
+                                    level.playSound(null, checkPos,
+                                            net.minecraft.sounds.SoundEvents.ENDERMAN_TELEPORT,
+                                            net.minecraft.sounds.SoundSource.BLOCKS, 1.0F, 1.0F);
+
+                                    foundStructure = true;
+                                }
+                            }
+
+                            if (foundStructure) {
+                                break;
+                            }
                         }
                     }
                 }
