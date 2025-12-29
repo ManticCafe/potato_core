@@ -1,6 +1,7 @@
 package com.ManticCafe.potato_core.Jei;
 
 import com.ManticCafe.potato_core.common.crafting.lightningCrafting;
+import com.ManticCafe.potato_core.common.item.itemhandler;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.registration.IRecipeCatalystRegistration;
@@ -11,7 +12,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import org.jetbrains.annotations.NotNull;
-import com.ManticCafe.potato_core.common.item.itemhandler;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,12 +1,7 @@
 package com.ManticCafe.potato_core.common.tier;
 
-import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.TagKey;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.level.block.Block;
-import net.minecraftforge.common.ForgeTier;
 import org.jetbrains.annotations.NotNull;
 
 public class infinite_tier implements Tier{

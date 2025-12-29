@@ -1,8 +1,9 @@
 package com.ManticCafe.potato_core.common.config;
 
-import java.util.concurrent.atomic.AtomicBoolean;
 import com.mojang.logging.LogUtils;
 import org.slf4j.Logger;
+
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class ConfigCache {
     private static final Logger LOGGER = LogUtils.getLogger();

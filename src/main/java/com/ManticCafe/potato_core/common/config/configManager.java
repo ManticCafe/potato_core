@@ -1,10 +1,10 @@
 package com.ManticCafe.potato_core.common.config;
 
+import com.mojang.logging.LogUtils;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.config.ModConfig;
 import org.apache.commons.lang3.tuple.Pair;
-import com.mojang.logging.LogUtils;
 import org.slf4j.Logger;
 
 public class configManager {

@@ -1,15 +1,18 @@
 package com.ManticCafe.potato_core.common.item.weapon;
 
+import com.ManticCafe.potato_core.common.config.configReader;
+import com.ManticCafe.potato_core.common.entity.entities.DiamondProjectileEntity;
+import com.ManticCafe.potato_core.common.entity.entityhandler;
+import com.ManticCafe.potato_core.common.tier.infinite_tier;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.*;
-import com.ManticCafe.potato_core.common.tier.infinite_tier;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.level.Level;
-import com.ManticCafe.potato_core.common.entity.entities.DiamondProjectileEntity;
-import com.ManticCafe.potato_core.common.entity.entityhandler;
 import net.minecraft.world.phys.Vec3;
-import com.ManticCafe.potato_core.common.config.configReader;
 
 public class the_last_sword extends SwordItem {
 

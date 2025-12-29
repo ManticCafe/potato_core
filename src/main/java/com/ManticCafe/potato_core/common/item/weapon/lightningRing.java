@@ -1,6 +1,5 @@
 package com.ManticCafe.potato_core.common.item.weapon;
 
-import com.ManticCafe.potato_core.common.config.configReader;
 import com.ManticCafe.potato_core.common.entity.entities.DiamondProjectileEntity;
 import com.ManticCafe.potato_core.common.entity.entityhandler;
 import net.minecraft.world.InteractionHand;

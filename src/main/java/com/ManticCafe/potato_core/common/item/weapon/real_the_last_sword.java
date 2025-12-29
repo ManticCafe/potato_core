@@ -1,16 +1,20 @@
 package com.ManticCafe.potato_core.common.item.weapon;
 
+import com.ManticCafe.potato_core.common.config.configReader;
+import com.ManticCafe.potato_core.common.entity.entities.PotatoProjectileEntity;
+import com.ManticCafe.potato_core.common.entity.entityhandler;
+import com.ManticCafe.potato_core.common.tier.infinite_tier;
 import net.minecraft.core.BlockPos;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
-import com.ManticCafe.potato_core.common.tier.infinite_tier;
 import net.minecraft.world.level.Level;
-import com.ManticCafe.potato_core.common.entity.entities.PotatoProjectileEntity;
-import com.ManticCafe.potato_core.common.entity.entityhandler;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -18,10 +22,6 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.phys.Vec3;
-import com.ManticCafe.potato_core.common.config.configReader;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.chat.Component;
-import net.minecraft.util.Mth;
 
 import javax.annotation.Nullable;
 import java.util.List;

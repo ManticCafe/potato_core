@@ -6,17 +6,15 @@ import com.ManticCafe.potato_core.common.item.tool.the_last_axe;
 import com.ManticCafe.potato_core.common.item.tool.the_last_hoe;
 import com.ManticCafe.potato_core.common.item.tool.the_last_pickaxe;
 import com.ManticCafe.potato_core.common.item.tool.the_last_shovel;
-import com.ManticCafe.potato_core.common.item.weapon.the_last_sword;
+import com.ManticCafe.potato_core.common.item.weapon.*;
 import com.ManticCafe.potato_core.main;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Rarity;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import com.ManticCafe.potato_core.common.item.weapon.*;
 
 public class itemhandler {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, main.MODID);

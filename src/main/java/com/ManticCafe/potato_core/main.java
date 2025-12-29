@@ -1,17 +1,17 @@
 package com.ManticCafe.potato_core;
 
+import com.ManticCafe.potato_core.common.GUI.creativeModeTabs.tabhandler;
 import com.ManticCafe.potato_core.common.block.blockhandler;
-import com.ManticCafe.potato_core.common.config.configManager;
 import com.ManticCafe.potato_core.common.config.ConfigCache;
+import com.ManticCafe.potato_core.common.config.configManager;
+import com.ManticCafe.potato_core.common.entity.entityhandler;
+import com.ManticCafe.potato_core.common.item.itemhandler;
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
-import com.ManticCafe.potato_core.common.entity.entityhandler;
-import com.ManticCafe.potato_core.common.item.itemhandler;
-import com.ManticCafe.potato_core.common.GUI.creativeModeTabs.tabhandler;
 
 @Mod(main.MODID)
 public class main {

@@ -1,12 +1,10 @@
 package com.ManticCafe.potato_core.common.event;
 
-import com.ManticCafe.potato_core.common.entity.entities.PotatoProjectileEntity;
-import com.ManticCafe.potato_core.common.entity.renderer.PotatoProjectileRenderer;
-import com.ManticCafe.potato_core.main;
 import com.ManticCafe.potato_core.common.entity.entityhandler;
 import com.ManticCafe.potato_core.common.entity.renderer.DiamondProjectileRenderer;
+import com.ManticCafe.potato_core.common.entity.renderer.PotatoProjectileRenderer;
 import com.ManticCafe.potato_core.common.entity.renderer.itemBaseBlockEntityRenderer;
-import net.minecraft.client.renderer.entity.ThrownItemRenderer;
+import com.ManticCafe.potato_core.main;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;

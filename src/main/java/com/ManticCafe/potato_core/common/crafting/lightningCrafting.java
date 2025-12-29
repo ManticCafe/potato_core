@@ -1,9 +1,7 @@
 package com.ManticCafe.potato_core.common.crafting;
 
-import com.ManticCafe.potato_core.common.item.itemhandler;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
