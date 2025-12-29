@@ -28,6 +28,7 @@ public class tabhandler {
                         pOutput.accept(itemhandler.the_last_sword_level8.get());
                         pOutput.accept(itemhandler.the_last_sword_final.get());
                         pOutput.accept(itemhandler.real_the_last_sword.get());
+                        pOutput.accept(itemhandler.lightning_ring.get());
                         pOutput.accept(itemhandler.the_last_pickaxe.get());
                         pOutput.accept(itemhandler.the_last_axe.get());
                         pOutput.accept(itemhandler.the_last_shovel.get());
