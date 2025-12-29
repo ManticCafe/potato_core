@@ -1,11 +1,8 @@
 // the_last_axe.java
 package com.ManticCafe.potato_core.common.item.tool;
 
-import net.minecraft.world.item.AxeItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.*;
 import com.ManticCafe.potato_core.common.tier.infinite_tier;
-import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.InteractionHand;
@@ -13,7 +10,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.Mth;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
 
 import javax.annotation.Nullable;
@@ -33,7 +29,7 @@ public class the_last_axe extends AxeItem {
     };
 
     public the_last_axe() {
-        super(infinite_tier.INFINITE_TIER, 0, 12, new Item.Properties().durability(-1));
+        super(infinite_tier.INFINITE_TIER, 0, 12, new Item.Properties().durability(-1).rarity(Rarity.RARE));
     }
 
     @Override

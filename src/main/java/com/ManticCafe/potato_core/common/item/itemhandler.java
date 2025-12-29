@@ -11,6 +11,7 @@ import com.ManticCafe.potato_core.main;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.Rarity;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -38,10 +39,11 @@ public class itemhandler {
     public static final RegistryObject<Item> the_last_shovel = ITEMS.register("the_last_shovel", () -> new the_last_shovel());
     public static final RegistryObject<Item> the_last_hoe = ITEMS.register("the_last_hoe", () -> new the_last_hoe());
     public static final RegistryObject<Item> mysterious_potato = ITEMS.register("mysterious_potato", () -> new mysterious_potato());
-    public static final RegistryObject<Item> the_last_ingot = ITEMS.register("the_last_ingot", () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> potato_crystal = ITEMS.register("potato_crystal", () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> potato_star = ITEMS.register("potato_star", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> the_last_ingot = ITEMS.register("the_last_ingot", () -> new Item(new Item.Properties().rarity(Rarity.EPIC)));
+    public static final RegistryObject<Item> potato_crystal = ITEMS.register("potato_crystal", () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));
+    public static final RegistryObject<Item> potato_star = ITEMS.register("potato_star", () -> new Item(new Item.Properties().rarity(Rarity.EPIC)));
     public static final RegistryObject<Item> lightning_ring = ITEMS.register("lightning_ring",() -> new lightningRing());
+    public static final RegistryObject<Item> lightning_ingot = ITEMS.register("lightning_ingot", () -> new Item(new Item.Properties().rarity(Rarity.RARE)));
 
     public static final RegistryObject<Item> ITEM_BASE_BLOCK_ITEM = ITEMS.register("item_base_block", () -> new BlockItem(blockhandler.ITEM_BASE_BLOCK.get(), new Item.Properties()));
 

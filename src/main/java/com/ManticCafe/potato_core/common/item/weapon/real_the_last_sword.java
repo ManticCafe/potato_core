@@ -6,11 +6,8 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.SwordItem;
+import net.minecraft.world.item.*;
 import com.ManticCafe.potato_core.common.tier.infinite_tier;
-import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import com.ManticCafe.potato_core.common.entity.entities.PotatoProjectileEntity;
 import com.ManticCafe.potato_core.common.entity.entityhandler;
@@ -45,7 +42,7 @@ public class real_the_last_sword extends SwordItem {
     };
 
     public real_the_last_sword() {
-        super(infinite_tier.INFINITE_TIER, 2024, 12, new Item.Properties().durability(-1));
+        super(infinite_tier.INFINITE_TIER, 2024, 12, new Item.Properties().durability(-1).rarity(Rarity.EPIC));
     }
 
     @Override

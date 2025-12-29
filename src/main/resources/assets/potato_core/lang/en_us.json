@@ -22,7 +22,9 @@
     "item.potato_core.the_last_hoe": "The Last Hoe",
     "item.potato_core.potato_star": "Potato Star",
     "item.potato_core.potato_crystal": "Potato Crystal",
-    "item.potato_core.item_base_block": "Item Base Block",
+    "item.potato_core.item_base_block": "Item Base",
+    "item.potato_core.lightning_ring": "Lightning Ring",
+    "item.potato_core.lightning_ingot": "Lightning Ingot",
 
     "//物品栏本地化：":" ",
     "itemGroup.potato_core": "Potato Core",

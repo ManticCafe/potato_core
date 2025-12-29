@@ -7,10 +7,7 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.HoeItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 
@@ -31,7 +28,7 @@ public class the_last_hoe extends HoeItem {
     };
 
     public the_last_hoe() {
-        super(infinite_tier.INFINITE_TIER, 0, 12, new Item.Properties().durability(-1));
+        super(infinite_tier.INFINITE_TIER, 0, 12, new Item.Properties().durability(-1).rarity(Rarity.RARE));
     }
 
     @Override

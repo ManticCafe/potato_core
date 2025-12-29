@@ -3,10 +3,7 @@ package com.ManticCafe.potato_core.common.item.weapon;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.SwordItem;
-import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.*;
 import com.ManticCafe.potato_core.common.tier.infinite_tier;
 import net.minecraft.world.level.Level;
 import com.ManticCafe.potato_core.common.entity.entities.DiamondProjectileEntity;
@@ -19,7 +16,7 @@ public class the_last_sword extends SwordItem {
     private static final int PROJECTILE_DAMAGE = configReader.getr_projectile_damage();
 
     public the_last_sword() {
-        super(infinite_tier.INFINITE_TIER,0,0,new Item.Properties().durability(-1));
+        super(infinite_tier.INFINITE_TIER,0,0,new Item.Properties().durability(-1).rarity(Rarity.EPIC));
     }
 
     @Override

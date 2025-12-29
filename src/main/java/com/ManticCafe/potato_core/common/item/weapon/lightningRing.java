@@ -1,7 +1,16 @@
 package com.ManticCafe.potato_core.common.item.weapon;
 
+import com.ManticCafe.potato_core.common.config.configReader;
+import com.ManticCafe.potato_core.common.entity.entities.DiamondProjectileEntity;
+import com.ManticCafe.potato_core.common.entity.entityhandler;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.Vec3;
 
 public class lightningRing extends Item {
 
@@ -9,7 +18,43 @@ public class lightningRing extends Item {
         super(new Item.Properties()
                 .stacksTo(1) // 最大堆叠
                 .rarity(Rarity.RARE) // 稀有度
-                .durability(-1) // 耐久
+                .durability(20) // 耐久
         );
+    }
+
+    @Override
+    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+        ItemStack itemStack = player.getItemInHand(hand);
+
+        if (!level.isClientSide) {
+            DiamondProjectileEntity diamondProjectile = new DiamondProjectileEntity(
+                    entityhandler.DIAMOND_PROJECTILE.get(),
+                    player,
+                    level,
+                    0
+            );
+
+            Vec3 eyePosition = player.getEyePosition();
+            diamondProjectile.setPos(eyePosition.x, eyePosition.y, eyePosition.z);
+
+            diamondProjectile.shootFromRotation(
+                    player,
+                    player.getXRot(),
+                    player.getYRot(),
+                    0.0F,     // 倾斜角度
+                    3.0F,              // 速度
+                    1.0F               // 精准度
+            );
+
+            level.addFreshEntity(diamondProjectile);
+
+            //技能CD
+            player.getCooldowns().addCooldown(this, 1);
+
+            itemStack.hurtAndBreak(1, player, (enity) -> {
+                enity.broadcastBreakEvent(hand);
+            });
+        }
+        return InteractionResultHolder.sidedSuccess(itemStack, level.isClientSide());
     }
 }

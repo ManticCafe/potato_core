@@ -28,16 +28,17 @@ public class tabhandler {
                         pOutput.accept(itemhandler.the_last_sword_level8.get());
                         pOutput.accept(itemhandler.the_last_sword_final.get());
                         pOutput.accept(itemhandler.real_the_last_sword.get());
-                        pOutput.accept(itemhandler.lightning_ring.get());
                         pOutput.accept(itemhandler.the_last_pickaxe.get());
                         pOutput.accept(itemhandler.the_last_axe.get());
                         pOutput.accept(itemhandler.the_last_shovel.get());
                         pOutput.accept(itemhandler.the_last_hoe.get());
-                        pOutput.accept(itemhandler.mysterious_potato.get());
-                        pOutput.accept(itemhandler.the_last_ingot.get());
-                        pOutput.accept(itemhandler.potato_star.get());
-                        pOutput.accept(itemhandler.potato_crystal.get());
-                        pOutput.accept(itemhandler.ITEM_BASE_BLOCK_ITEM.get());
+                        pOutput.accept(itemhandler.lightning_ring.get()); // 闪电戒指
+                        pOutput.accept(itemhandler.mysterious_potato.get()); // 神秘的土豆
+                        pOutput.accept(itemhandler.potato_crystal.get()); // 土豆结晶
+                        pOutput.accept(itemhandler.lightning_ingot.get()); // 闪电锭
+                        pOutput.accept(itemhandler.the_last_ingot.get()); // 最终锭
+                        pOutput.accept(itemhandler.potato_star.get()); // 土豆之星
+                        pOutput.accept(itemhandler.ITEM_BASE_BLOCK_ITEM.get()); // 物品基座
                     }).build());
 
     //注册事件

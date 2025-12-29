@@ -23,6 +23,8 @@
     "item.potato_core.potato_star": "土豆之星",
     "item.potato_core.potato_crystal": "土豆结晶",
     "item.potato_core.item_base_block": "物品基座",
+    "item.potato_core.lightning_ring": "闪电戒指",
+    "item.potato_core.lightning_ingot": "闪电锭",
 
     "//物品栏本地化：":" ",
     "itemGroup.potato_core": "土豆核心",

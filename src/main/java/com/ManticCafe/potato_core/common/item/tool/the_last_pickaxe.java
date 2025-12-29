@@ -2,9 +2,7 @@
 package com.ManticCafe.potato_core.common.item.tool;
 
 import com.ManticCafe.potato_core.common.tier.infinite_tier;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.PickaxeItem;
-import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.InteractionHand;
@@ -12,7 +10,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.Mth;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
 
 import javax.annotation.Nullable;
@@ -32,7 +29,7 @@ public class the_last_pickaxe extends PickaxeItem {
     };
 
     public the_last_pickaxe() {
-        super(infinite_tier.INFINITE_TIER, 0, 12, new Item.Properties().durability(-1));
+        super(infinite_tier.INFINITE_TIER, 0, 12, new Item.Properties().durability(-1).rarity(Rarity.RARE));
     }
 
     @Override
