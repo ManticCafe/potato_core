@@ -50,7 +50,6 @@ public class itemhandler {
             .nutrition(6)
             .saturationMod(7)
             .alwaysEat()
-            .fast()
             .effect(() -> new MobEffectInstance(MobEffects.GLOWING, 15400, 1), 1.0f) // 发光
             .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 15400, 5), 1.0f)  // 生命恢复
             .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 15400, 7), 1.0f)  // 伤害吸收
