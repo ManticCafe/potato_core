@@ -1,6 +1,7 @@
 {
     "//方块本地化：":" ",
     "block.potato_core.item_base_block": "物品基座",
+    "block.potato_core.apocalyptium_block": "神灵金属块",
 
     "//物品本地化：":" ",
     "item.potato_core.the_last_sword": "最终之剑",
@@ -25,6 +26,7 @@
     "item.potato_core.item_base_block": "物品基座",
     "item.potato_core.lightning_ring": "闪电戒指",
     "item.potato_core.lightning_ingot": "闪电锭",
+    "item.potato_core.apocalyptium_block": "神灵金属块",
 
     "//物品栏本地化：":" ",
     "itemGroup.potato_core": "土豆核心",

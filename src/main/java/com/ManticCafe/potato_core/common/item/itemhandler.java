@@ -8,6 +8,9 @@ import com.ManticCafe.potato_core.common.item.tool.the_last_pickaxe;
 import com.ManticCafe.potato_core.common.item.tool.the_last_shovel;
 import com.ManticCafe.potato_core.common.item.weapon.*;
 import com.ManticCafe.potato_core.main;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
@@ -42,6 +45,19 @@ public class itemhandler {
     public static final RegistryObject<Item> potato_star = ITEMS.register("potato_star", () -> new Item(new Item.Properties().rarity(Rarity.EPIC)));
     public static final RegistryObject<Item> lightning_ring = ITEMS.register("lightning_ring",() -> new lightningRing());
     public static final RegistryObject<Item> lightning_ingot = ITEMS.register("lightning_ingot", () -> new Item(new Item.Properties().rarity(Rarity.RARE)));
+
+    public static final RegistryObject<Item> APOCALYPTIUM_BLOCK_item = BLOCKITEMS.register("apocalyptium_block", () -> new BlockItem(blockhandler.APOCALYPTIUM_BLOCK.get(), new Item.Properties().rarity(Rarity.EPIC).food(new FoodProperties.Builder()
+            .nutrition(6)
+            .saturationMod(7)
+            .alwaysEat()
+            .fast()
+            .effect(() -> new MobEffectInstance(MobEffects.GLOWING, 15400, 1), 1.0f) // 发光
+            .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 15400, 5), 1.0f)  // 生命恢复
+            .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 15400, 7), 1.0f)  // 伤害吸收
+            .effect(() -> new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 1540, 4), 1.0f) // 抗性提示
+            .effect(() -> new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1540, 1), 1.0f) // 火焰抗性
+            .build()
+    )));
 
     public static final RegistryObject<Item> ITEM_BASE_BLOCK_ITEM = ITEMS.register("item_base_block", () -> new BlockItem(blockhandler.ITEM_BASE_BLOCK.get(), new Item.Properties()));
 

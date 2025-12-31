@@ -39,6 +39,7 @@ public class tabhandler {
                         pOutput.accept(itemhandler.the_last_ingot.get()); // 最终锭
                         pOutput.accept(itemhandler.potato_star.get()); // 土豆之星
                         pOutput.accept(itemhandler.ITEM_BASE_BLOCK_ITEM.get()); // 物品基座
+                        pOutput.accept(itemhandler.APOCALYPTIUM_BLOCK_item.get()); //神灵金属块
                     }).build());
 
     //注册事件

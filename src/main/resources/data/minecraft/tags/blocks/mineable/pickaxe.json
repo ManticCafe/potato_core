@@ -1,6 +1,7 @@
 {
   "values": [
     "potato_core:item_base_block",
+    "potato_core:apocalyptium_block",
     "minecraft:stone",
     "minecraft:granite",
     "minecraft:polished_granite",
