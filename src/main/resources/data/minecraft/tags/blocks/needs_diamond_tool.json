@@ -4,6 +4,7 @@
     "minecraft:crying_obsidian",
     "minecraft:netherite_block",
     "minecraft:respawn_anchor",
-    "minecraft:ancient_debris"
+    "minecraft:ancient_debris",
+    "potato_core:apocalyptium_block"
   ]
 }
