@@ -50,11 +50,11 @@ public class itemhandler {
             .nutrition(6)
             .saturationMod(7)
             .alwaysEat()
-            .effect(() -> new MobEffectInstance(MobEffects.GLOWING, 15400, 1), 1.0f) // 发光
-            .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 15400, 5), 1.0f)  // 生命恢复
-            .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 15400, 7), 1.0f)  // 伤害吸收
-            .effect(() -> new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 1540, 4), 1.0f) // 抗性提示
-            .effect(() -> new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1540, 1), 1.0f) // 火焰抗性
+            .effect(() -> new MobEffectInstance(MobEffects.GLOWING, 15400, 0), 1.0f) // 发光1
+            .effect(() -> new MobEffectInstance(MobEffects.ABSORPTION, 15400, 4), 1.0f)  // 伤害吸收5
+            .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 15400, 6), 1.0f)  // 生命恢复7
+            .effect(() -> new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 1540, 3), 1.0f) // 抗性提升4
+            .effect(() -> new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1540, 0), 1.0f) // 火焰抗性1
             .build()
     )));
 
