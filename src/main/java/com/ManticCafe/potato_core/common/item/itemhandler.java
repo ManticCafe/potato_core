@@ -1,6 +1,8 @@
 package com.ManticCafe.potato_core.common.item;
 
 import com.ManticCafe.potato_core.common.block.blockhandler;
+import com.ManticCafe.potato_core.common.entity.entityhandler;
+import com.ManticCafe.potato_core.common.item.entityGenerator.generator_potato_loot_box;
 import com.ManticCafe.potato_core.common.item.item.mysterious_potato;
 import com.ManticCafe.potato_core.common.item.tool.the_last_axe;
 import com.ManticCafe.potato_core.common.item.tool.the_last_hoe;
@@ -45,6 +47,10 @@ public class itemhandler {
     public static final RegistryObject<Item> potato_star = ITEMS.register("potato_star", () -> new Item(new Item.Properties().rarity(Rarity.EPIC)));
     public static final RegistryObject<Item> lightning_ring = ITEMS.register("lightning_ring",() -> new lightningRing());
     public static final RegistryObject<Item> lightning_ingot = ITEMS.register("lightning_ingot", () -> new Item(new Item.Properties().rarity(Rarity.RARE)));
+    public static final RegistryObject<Item> generator_potato_loot_box = ITEMS.register("generator_potato_loot_box", () -> new generator_potato_loot_box(new Item.Properties()
+            .rarity(Rarity.COMMON),
+            entityhandler.POTATO_LOOT_BOX
+    ));
 
     public static final RegistryObject<Item> APOCALYPTIUM_BLOCK_item = BLOCKITEMS.register("apocalyptium_block", () -> new BlockItem(blockhandler.APOCALYPTIUM_BLOCK.get(), new Item.Properties().rarity(Rarity.EPIC).food(new FoodProperties.Builder()
             .nutrition(6)

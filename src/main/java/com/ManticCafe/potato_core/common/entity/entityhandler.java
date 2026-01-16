@@ -4,6 +4,7 @@ import com.ManticCafe.potato_core.common.block.blockhandler;
 import com.ManticCafe.potato_core.common.entity.entities.DiamondProjectileEntity;
 import com.ManticCafe.potato_core.common.entity.entities.PotatoProjectileEntity;
 import com.ManticCafe.potato_core.common.entity.entities.itemBaseBlockEntity;
+import com.ManticCafe.potato_core.common.entity.lootBox.potato_loot_box;
 import com.ManticCafe.potato_core.main;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -39,6 +40,11 @@ public class entityhandler {
             BLOCK_ENTITIES.register("item_base_block_entity",
                     () -> BlockEntityType.Builder.of(itemBaseBlockEntity::new,
                             blockhandler.ITEM_BASE_BLOCK.get()).build(null));
+
+    public static final RegistryObject<EntityType<potato_loot_box>> POTATO_LOOT_BOX =
+            ENTITY_TYPES.register("potato_loot_box",
+        () -> EntityType.Builder.of(potato_loot_box::new, MobCategory.CREATURE)
+                .build("potato_loot_box"));
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);

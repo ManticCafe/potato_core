@@ -40,6 +40,7 @@ public class tabhandler {
                         pOutput.accept(itemhandler.potato_star.get()); // 土豆之星
                         pOutput.accept(itemhandler.ITEM_BASE_BLOCK_ITEM.get()); // 物品基座
                         pOutput.accept(itemhandler.APOCALYPTIUM_BLOCK_item.get()); //神灵金属块
+                        pOutput.accept(itemhandler.generator_potato_loot_box.get()); // 生成土豆战利品箱
                     }).build());
 
     //注册事件

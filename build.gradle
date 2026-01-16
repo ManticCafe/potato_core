@@ -149,6 +149,14 @@ repositories {
     maven{ url= 'https://maven.aliyun.com/repository/central/'}
     maven{ url= 'https://maven.aliyun.com/repository/qradle-plugin/'}
     maven{ url= 'https://maven.aliyun.com/repository/forqe/'}
+    maven {
+        name = 'GeckoLib'
+        url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
+        content {
+            includeGroupByRegex("software\\.bernie.*")
+            includeGroup("com.eliotlash.mclib")
+        }
+    }
 }
 
 dependencies {
@@ -170,6 +178,8 @@ dependencies {
     runtimeOnly fg.deobf("mezz.jei:jei-1.20.1-forge:15.2.0.27")//jei
 
     runtimeOnly fg.deobf("maven.modrinth:jade:11.13.2+forge")//玉
+    implementation fg.deobf("software.bernie.geckolib:geckolib-forge-1.20.1:4.4.2")
+    implementation("com.eliotlash.mclib:mclib:20")
 
     // Example mod dependency using a mod jar from ./libs with a flat dir repository
     // This maps to ./libs/coolmod-${mc_version}-${coolmod_version}.jar

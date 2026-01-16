@@ -27,6 +27,7 @@
     "item.potato_core.lightning_ring": "闪电戒指",
     "item.potato_core.lightning_ingot": "闪电锭",
     "item.potato_core.apocalyptium_block": "神灵金属块",
+    "item.potato_core.generator_potato_loot_box": "§6黄金战利品箱",
 
     "//物品栏本地化：":" ",
     "itemGroup.potato_core": "土豆核心",
@@ -47,5 +48,7 @@
     "message.potato_core.mode_switch": "§6当前档位: %s §7(速度: %s§7)",
 
     "jei.category.potato_core.lightning_crafting": "雷击合成",
-    "jei.tooltip.potato_core.lightning_strike": "雷击"
+    "jei.tooltip.potato_core.lightning_strike": "雷击",
+
+    "entity.potato_core.potato_loot_box": "§6黄金战利品箱"
 }
