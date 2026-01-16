@@ -331,7 +331,7 @@ public class potato_loot_box extends Mob implements GeoEntity{
     }
 
     // 设置物品列表
-        public void setItemsToSpit(ItemStack... items) {
+    public void setItemsToSpit(ItemStack... items) {
         itemsToSpit.clear();
         if (items != null) {
             for (ItemStack item : items) {
@@ -342,10 +342,26 @@ public class potato_loot_box extends Mob implements GeoEntity{
         }
     }
 
+    // 添加物品列表
+    public void addItemToSpit(ItemStack item) {
+        if (item != null) {
+            itemsToSpit.add(item);
+        }
+    }
+
     // 设置物品列表(Kubejs) 成功返回true
     public static boolean setItemsForKubeJS(Entity entity, ItemStack... items) {
         if (entity instanceof potato_loot_box) {
             ((potato_loot_box) entity).setItemsToSpit(items);
+            return true;
+        }
+        return false;
+    }
+
+    // 添加物品列表(Kubejs) 成功返回true
+    public static boolean addItemForKubeJS(Entity entity,ItemStack item) {
+        if (entity instanceof potato_loot_box) {
+            ((potato_loot_box) entity).addItemToSpit(item);
             return true;
         }
         return false;
