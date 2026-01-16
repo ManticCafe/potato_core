@@ -241,6 +241,7 @@ public class potato_loot_box extends Mob implements GeoEntity{
 
     @Override
     protected void customServerAiStep() {
+
     }
 
     @Override
