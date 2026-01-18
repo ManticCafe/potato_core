@@ -180,7 +180,7 @@ public class potato_loot_box extends Mob implements GeoEntity{
 
             switch (currentState) {
                 case STATE_SPAWNING:
-                    if (animationTick >= 20) {
+                    if (animationTick >= 30) {
                         setEntityState(STATE_IDLE);
                         setAnimationTick(0);
                     }
@@ -266,6 +266,16 @@ public class potato_loot_box extends Mob implements GeoEntity{
     }
 
     @Override
+    public boolean isOnFire() {
+        return false;
+    }
+
+    @Override
+    public boolean isAggressive() {
+        return false;
+    }
+
+    @Override
     public InteractionResult mobInteract(Player player, InteractionHand hand) {
         if (!this.level().isClientSide && hand == InteractionHand.MAIN_HAND) {
             int currentState = getEntityState();
@@ -310,9 +320,11 @@ public class potato_loot_box extends Mob implements GeoEntity{
                 return PlayState.CONTINUE;
 
             case STATE_IDLE:
+
             case STATE_DESPAWNING:
+
             default:
-                return PlayState.STOP;
+                return PlayState.CONTINUE;
         }
     }
 
