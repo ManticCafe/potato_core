@@ -5,6 +5,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
@@ -29,6 +30,7 @@ public class generator_potato_loot_box extends Item {
             return InteractionResult.SUCCESS;
         }
         ItemStack itemStack = context.getItemInHand();
+        Player player = context.getPlayer();
         BlockPos blockPos = context.getClickedPos();
         Direction direction = context.getClickedFace();
         BlockPos spawnPos = blockPos.relative(direction);
@@ -48,6 +50,9 @@ public class generator_potato_loot_box extends Item {
         lootBox.yHeadRot = 0.0F;
         lootBox.yBodyRot = 0.0F;
         level.addFreshEntity(lootBox);
+        if (player != null && !player.isCreative()) {
+            itemStack.shrink(1);
+        }
         return InteractionResult.CONSUME;
     }
 }
